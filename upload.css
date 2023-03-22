@@ -1,0 +1,152 @@
+body{
+    background-image: url("images/back.jpg");
+    max-width:100% ;
+    height: auto;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    margin: 0;
+}
+.container{
+    float: left;
+    width: 100%;
+    margin: 0;
+}
+
+.navbari li{
+    float: left;
+}
+
+.navbari{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: blanchedalmond;
+    overflow: hidden;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    border-bottom: 1px solid gray;
+}
+
+.navbari a{
+    text-decoration: none;
+    color: rgb(255, 75, 4);
+    font-size: larger;
+    display: block;
+    text-align: center; 
+    padding: 14px 16px;
+    margin-bottom: -10px;
+}
+.logo{
+    width: 30px;
+    height: 30px;
+}
+.logoimg{
+    margin-left: 32px;
+}
+
+.log{
+    padding-left: 1200px;
+}
+
+div{
+    display: block;
+}
+
+a:hover{
+    background-color: rgb(252, 126, 9);
+    color: rgb(241, 229, 172);
+}
+.up{
+    background-color: rgb(252, 126, 9);
+    text-align: center;
+    margin-top: 150px;
+    height: 600px;
+    display: block;
+}
+font{
+    display: block;
+    padding-top: 20px;
+}
+
+.where{
+    cursor: pointer;
+    font-size: 20px;
+    background-color: blanchedalmond;
+    border: 0 none ;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
+    color:grey;
+    margin-bottom: 20px;
+}
+
+.add{
+    cursor: pointer;
+    font-size: 20px;
+    background-color: blanchedalmond;
+    border: 0 none ;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
+    color:rgb(252, 126, 9);
+    margin-bottom: 20px;
+    width: 350px;
+}
+.add:hover{
+    background-color:rgb(197, 206, 78) ;
+    border: 1px solid  blanchedalmond;
+    color:grey;
+}
+.com{
+    cursor: pointer;
+    font-size: 20px;
+    background-color: blanchedalmond;
+    border: 0 none ;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
+    color:rgb(252, 126, 9);
+    margin-bottom: 20px;
+    width: 350px;
+}
+.com:hover{
+    background-color:rgb(197, 206, 78) ;
+    border: 1px solid  blanchedalmond;
+    color:grey;
+}
+
+.pri{
+    cursor: pointer;
+    font-size: 20px;
+    background-color: blanchedalmond;
+    border: 0 none ;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
+    color:rgb(252, 126, 9);
+    margin-bottom: 20px;
+    width: 150px;
+}
+.pri:hover{
+    background-color:rgb(197, 206, 78) ;
+    border: 1px solid  blanchedalmond;
+    color:grey;
+}
+
+
+#acc:hover{
+    background-color: rgb(197, 206, 78);
+}
+
+#pass:hover{
+    background-color: rgb(197, 206, 78);
+}
+
+.sub{
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+

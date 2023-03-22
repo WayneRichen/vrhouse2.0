@@ -1,0 +1,222 @@
+body{
+    background-image: url("images/back.jpg");
+    max-width:100% ;
+    height: auto;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    margin: 0;
+}
+.container{
+    float: left;
+    width: 100%;
+    margin: 0;
+}
+
+.navbari li{
+    float: left;
+}
+
+.navbari{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: blanchedalmond;
+    overflow: hidden;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    border-bottom: 1px solid gray;
+}
+
+.navbari a{
+    text-decoration: none;
+    color: rgb(255, 75, 4);
+    font-size: larger;
+    display: block;
+    text-align: center; 
+    padding: 14px 16px;
+    margin-bottom: -10px;
+}
+.logo{
+    width: 30px;
+    height: 30px;
+}
+.logoimg{
+    margin-left: 32px;
+}
+
+.log{
+    padding-left: 1200px;
+}
+
+
+a:hover{
+    background-color: rgb(252, 126, 9);
+    color: rgb(241, 229, 172);
+}
+
+.serch{
+    margin-top: 45px;
+    background-image: url("images/house.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 800px;
+    position: relative;
+    display: block;
+}
+
+.choose{
+    text-align: center;
+    background-color: hsla(120, 1%, 15%, 0.7);
+    width: 30%;
+    height: auto;
+    border-radius: 10px;
+    position: absolute;
+    top: 300px;
+    left: 650px;
+}
+.pick{
+    margin: 20px;
+}
+.select{
+    height: 35px;
+    border-radius: 4px;
+}
+.input{
+    height: 30px;
+    width: 300px;
+    border-radius: 4px;
+}
+.rec{    
+    height: 515px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    background-color: blanchedalmond;
+}
+.house{
+    background-color: rgb(252, 126, 9);
+    margin: 0 20px 0 20px;
+    width: 30%;
+    display: inline-block;
+    border-radius: 20px;
+}
+.house img{
+    width: 90%;
+    height: 300px;
+}
+.house:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+}
+.desc{
+    color:rgb(58, 56, 56);
+    font-size: 20px;
+    margin: 10px;
+}
+.price{
+    color: red;
+    font-size: 35px;
+    margin: 10px;
+}
+.submit{
+    height: 40px;
+    width: 80px;
+    background-color: blanchedalmond;
+    border: 0 none ;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
+    color:rgb(252, 126, 9);
+}
+.submit:hover{
+    background-color:rgb(252, 126, 9) ;
+    border: 1px solid  blanchedalmond;
+    color:blanchedalmond;
+}
+
+.exampletop{
+    background-color: black;
+    text-align: center;
+    color: white;
+    padding: auto;
+    height: 50px;
+    display: block;
+}
+
+.exampletop h3{
+    padding-top: 10px;
+}
+
+.examplebottom{
+    background-color: black;
+    text-align: center;
+    color: white;
+    padding: auto;
+    height: 50px;
+    display: block;
+    margin-top: -25px;
+}
+.examplebottom h3{
+    padding-top: 10px;
+}
+/*以下複製*/
+.footer{
+    float: left;
+    background-color: blanchedalmond;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.aboutus{
+    float: left;
+    padding: 10px 0 10px 550px;
+    list-style-type: none;
+}
+
+.callme{
+    float: right;
+    padding: 10px 550px 10px 0px;
+    list-style-type: none;
+    
+}
+
+.aboutus li{
+    padding: 10px 0 10px 0;
+    margin-top: -10px;
+}
+
+.callme li{
+    padding: 10px 0 10px 0;
+    margin-top: -10px;
+}
+
+.callme i{
+    display: inline;
+}
+.footer li:hover{
+    cursor: pointer;
+}
+.fab:hover{
+    color:rgb(54, 140, 238);
+}
+
+.ig:hover{
+    color:palevioletred;
+}
+
+.you:hover{
+    color:red;
+}
+.aboutus li a{
+    text-decoration: none;
+    color: black;
+}
+#find{
+    text-decoration: none;
+    background-color: rgb(241, 229, 172);
+    color: rgb(252, 126, 9);
+    border-radius: 6px;
+}
+

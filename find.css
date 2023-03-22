@@ -1,0 +1,115 @@
+body{
+    background-image: url("images/back.jpg");
+    max-width:100% ;
+    height: auto;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    margin: 0;
+}
+.container{
+    float: left;
+    width: 100%;
+    margin: 0;
+}
+
+.navbari li{
+    float: left;
+}
+
+.navbari{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: blanchedalmond;
+    overflow: hidden;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    border-bottom: 1px solid gray;
+}
+
+.navbari a{
+    text-decoration: none;
+    color: rgb(255, 75, 4);
+    font-size: larger;
+    display: block;
+    text-align: center; 
+    padding: 14px 16px;
+    margin-bottom: -10px;
+}
+.logo{
+    width: 30px;
+    height: 30px;
+}
+.logoimg{
+    margin-left: 32px;
+}
+
+.log{
+    padding-left: 1400px;
+}
+
+
+a:hover{
+    background-color: rgb(252, 126, 9);
+    color: rgb(241, 229, 172);
+}
+.inside{
+    width: 100%;
+}
+
+
+
+.rightres{
+    background-color: rgb(2, 2, 2);
+    width: 100%;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 25px;
+    row-gap: 25px;
+    height: auto;
+}
+
+[class^="house"]{
+    background-color: rgb(237, 247, 193);
+}
+.housecon{
+    text-align: center;
+    color: blue;
+    height: auto;
+    vertical-align: center;
+    vertical-align: middle;
+}
+.houserec{
+    width: 80%;
+    height: 70%;
+    text-align: center;    
+}
+.desc{
+    margin: 10px 0 10px 0;
+    width: 100%;
+    font-size: 20px;
+}
+.price{
+    margin: 0 0 10px 0;
+    font-size: 20px;
+}
+.in{
+    margin: 0 0 0 0;
+    font-size: 40px;
+    text-decoration: none;
+    background-color: rgb(236, 87, 87);
+    color: aliceblue;
+    border-radius: 10px;
+}
+.toptop{
+    grid-column: 1 / 4;
+    background-color: black;
+    text-align: center;
+}
+.re{
+    color: white;
+    padding-top: 25px;
+}

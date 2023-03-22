@@ -1,0 +1,160 @@
+body{
+    background-image: url("images/back.jpg");
+    max-width:100% ;
+    height: auto;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    margin: 0;
+}
+.container{
+    float: left;
+    width: 100%;
+    margin: 0;
+}
+
+.navbari li{
+    float: left;
+}
+
+.navbari{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: blanchedalmond;
+    overflow: hidden;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    border-bottom: 1px solid gray;
+}
+
+.navbari a{
+    text-decoration: none;
+    color: rgb(255, 75, 4);
+    font-size: larger;
+    display: block;
+    text-align: center; 
+    padding: 14px 16px;
+    margin-bottom: -10px;
+}
+.logo{
+    width: 30px;
+    height: 30px;
+}
+.logoimg{
+    margin-left: 32px;
+}
+
+.log{
+    padding-left: 1200px;
+}
+
+div{
+    display: block;
+}
+
+a:hover{
+    background-color: rgb(252, 126, 9);
+    color: rgb(241, 229, 172);
+}
+.imfor{
+    background-color: rgb(252, 126, 9);
+    text-align: center;
+    margin-top: 50px;
+    height: auto;
+    display: block;
+}
+font{
+    display: block;
+    padding-top: 20px;
+}
+.houserec{
+    border: 2px solid black;
+}
+.houserec:hover{
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.7)
+}
+.equ{
+    width: 54%;
+    background-color: antiquewhite;
+    margin-left: 438px;
+    display: block;
+}
+.leftequ{
+    display: inline-block;
+    width: 50%;
+    margin: 5px;
+}
+.rightprice{
+    display: inline-block;
+    width: 30%;
+    margin: 5px;
+}
+.price{
+    color: red;
+    font-size: 35px;
+    margin: 10px;
+}
+.exampletop{
+    background-color: black;
+    text-align: center;
+    color: white;
+    padding: auto;
+    height: 50px;
+    display: block;
+}
+
+.exampletop h3{
+    padding-top: 10px;
+    margin-top: 10px;
+    display: inline;
+}
+
+.examplebottom{
+    background-color: black;
+    text-align: center;
+    color: white;
+    padding: auto;
+    height: 50px;
+    display: block;
+    margin-top: -25px;
+}
+.examplebottom h3{
+    padding-top: 10px;
+}
+.blank{
+    margin-left: 20px;
+    color: aqua;
+}
+.com{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 150px;
+    width: 150px;
+    background-color: aqua;
+    text-align: center;
+}
+.in{
+    display: block;
+    margin-top: 60px;
+    font-size: 20px;
+}
+.com2{
+    position: fixed;
+    bottom: 0;
+    right: 150px;
+    height: 150px;
+    width: 250px;
+    background-color: rgb(182, 79, 241);
+}
+.phone{
+    margin-top: 30px;
+    font-size: 20px;
+    display: block;
+}
+/*希望能夠使用hover，移動到連絡房東上，才跳出資料，目前並未成功*/
+.com:hover .com2{
+    visibility: visible;
+}
