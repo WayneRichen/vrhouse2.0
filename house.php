@@ -1,3 +1,10 @@
+<?php
+session_start();
+include("db.php");
+
+$acc=$_SESSION["logacc"];
+$sql = "SELECT * FROM `housee` WHERE `hh_who`=$acc";
+?>
 <!---我的房屋頁面，房東查看房屋的地方--->
 <!DOCTYPE html>
 <head>
@@ -10,22 +17,6 @@
 <body>
 
 		<tbody>
-<?php
-session_start();
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "rent";
-
-$acc=$_SESSION["logacc"];
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-$sql = "SELECT * FROM `housee` WHERE `hh_who`=$acc";
-?>
     <div class="container" id="top">        
         <div>
             <ul class="navbari">

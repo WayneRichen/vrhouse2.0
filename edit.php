@@ -1,12 +1,6 @@
-<!---編輯房屋判斷頁面--->
-<!---圖片必須上傳 且不可重複同樣圖片--->
-<!---點擊上傳與預約後，跳出框框顯示聯絡我們的資料(電話/信箱等)，來與我們取得聯繫並拍攝--->
 <?php
 session_start();
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "rent";
+include("db.php");
 $id = $_GET["id"];
 echo $id;
 
@@ -66,12 +60,6 @@ if ($sofa==null) { $sofa='false'; } else{$sofa='true'; }
 if ($tach==null) { $tach='false'; } else{$tach='true'; }
 if ($pet==null) { $pet='false'; } else{$pet='true'; }
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
 $sql = "UPDATE `housee` SET `hh_name`='$name',`hh_where`='$where',hh_address='$add',hh_price='$pri',water='$water',light='$light',inter='$inter',wash='$wash',ref='$ref',drink='$drink',tel='$tel',air='$air',gas='$gas',bed='$bed',cloth='$cloth',sofa='$sofa',tach='$tach',pet='$pet',hh_img='$dest' WHERE `housee`.`hh_id` = '$id'";
 $result = $conn->query($sql);
 if ($conn->query($sql) === TRUE) {    
@@ -82,8 +70,9 @@ if ($conn->query($sql) === TRUE) {
     header("Refresh:1;url=my.php");
   }
   $conn->close();
+  error_reporting(0);
 
 ?>
-<?php
-    error_reporting(0);
-?>
+<!---編輯房屋判斷頁面--->
+<!---圖片必須上傳 且不可重複同樣圖片--->
+<!---點擊上傳與預約後，跳出框框顯示聯絡我們的資料(電話/信箱等)，來與我們取得聯繫並拍攝--->

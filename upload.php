@@ -1,23 +1,11 @@
-<!---上架房屋頁面--->
-<!---點擊上傳與預約後，跳出框框顯示聯絡我們的資料(電話/信箱等)，來與我們取得聯繫並拍攝--->
 <?php
 session_start();
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "rent";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
+include("db.php");
 $conn->close();
+error_reporting(0);
 ?>
-<?php
-    error_reporting(0);
-?>
+<!---上架房屋頁面--->
+<!---點擊上傳與預約後，跳出框框顯示聯絡我們的資料(電話/信箱等)，來與我們取得聯繫並拍攝--->
 <?php
     if($_SESSION["loginC"] == "yes"){
     echo '        

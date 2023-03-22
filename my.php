@@ -1,16 +1,7 @@
-<!---個人資料頁面--->
 <?php
 session_start();
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "rent";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+include("db.php");
+// <!---個人資料頁面--->
 
 $conn->close();
 ?>

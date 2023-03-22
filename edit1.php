@@ -1,3 +1,10 @@
+<?php
+session_start();
+include("db.php");
+$acc=$_SESSION["logacc"];
+$id = $_GET["id"];
+$sql = "SELECT * FROM `housee` WHERE `hh_id`=$id";
+?>
 <!---編輯房屋頁面--->
 <!---點擊上傳與預約後，跳出框框顯示聯絡我們的資料(電話/信箱等)，來與我們取得聯繫並拍攝--->
     <!DOCTYPE html>
@@ -10,25 +17,6 @@
     <title>VR租屋網｜上傳</title>
     </head>
     <body>
-    <?php
-session_start();
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "rent";
-$acc=$_SESSION["logacc"];
-$id = $_GET["id"];
-echo $id;
-
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-$sql = "SELECT * FROM `housee` WHERE `hh_id`=$id";
-
-?>
     <div class="container" id="top">        
         <div>
             <ul class="navbari">

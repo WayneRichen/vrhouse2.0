@@ -1,6 +1,6 @@
-<!---上傳房屋判斷頁面--->
 <?php
 session_start();
+include("db.php");
 $name=$_POST["name"];
 $where=$_POST["where"];
 $add=$_POST["add"];
@@ -62,30 +62,16 @@ if ($pet==null) { $pet='false'; } else{$pet='true'; }
 
 $who=$_SESSION["logacc"];
 
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "rent";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
 $sql = "INSERT INTO `housee`( `hh_name`, `hh_where`, `hh_address`, `hh_com`, `hh_price`, `water`, `light`, `inter`, `wash`, `ref`, `drink`, `tel`, `air`, `gas`, `bed`, `cloth`, `sofa`, `tach`, `pet`, `hh_img`, `hh_who`) VALUES ('$name','$where','$add','$com','$pri','$water','$light','$inter','$wash','$ref','$drink','$tel','$air','$gas','$bed','$cloth','$sofa','$tach','$pet','$dest','$who')";
 
 if ($conn->query($sql) === TRUE) {  
-  echo "<script>alert('上傳成功，再來請填寫預約拍攝時間')</script>";
-  header("Refresh:1;url=index.php");
+  echo "<script>alert('上傳成功，再來請填寫預約拍攝時間');window.location.replace('index.php');</script>";
 } else {
-  echo "<script>alert('上傳失敗，請重新上傳')</script>";
-  header("Refresh:1;url=upload.php");
+  echo "<script>alert('上傳失敗，請重新上傳');window.location.replace('upload.php');</script>";
 }
 
 $conn->close();
+error_reporting(0);
 
 ?>
-<?php
-    error_reporting(0);
-?>
+<!---上傳房屋判斷頁面--->

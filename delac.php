@@ -1,31 +1,18 @@
-<!---註銷帳號--->
 <?php
 session_start();
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "rent";
+include("db.php");
 
-$acc=$_SESSION["logacc"];
-
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
-
+$acc = $_SESSION["logacc"];
 $sql = "DELETE FROM user WHERE `user`.`acc` = '$acc'";
 $result = $conn->query($sql);
 
 if ($conn->query($sql) === TRUE) {    
-    session_destroy();
-    echo "<script>alert('帳號已成功註銷，跳轉至首頁')</script>";
-    header("Refresh:1;url=index.php");
-  } else {
-    echo "<script>alert('註銷失敗，請重新操作')</script>";
-    header("Refresh:1;url=my.php");
-  }
-  $conn->close();
+  session_destroy();
+  echo "<script>alert('帳號已成功註銷，跳轉至首頁');window.location.replace('index.php');</script>";
+} else {
+  echo "<script>alert('註銷失敗，請重新操作');window.location.replace('my.php');</script>";
+}
+$conn->close();
 
 ?>
+<!---註銷帳號--->

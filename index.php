@@ -1,23 +1,11 @@
-<!---首頁版面--->
-<!---為你推薦希望能夠隨機抽取資料庫房屋資訊來顯示--->
 <?php
 session_start();
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "rent";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
+include("db.php");
 $conn->close();
+error_reporting(0);
 ?>
-<?php
-    error_reporting(0);
-?>
+<!---首頁版面--->
+<!---為你推薦希望能夠隨機抽取資料庫房屋資訊來顯示--->
 <?php
       if($_SESSION["loginC"] == "yes"){
       echo '        

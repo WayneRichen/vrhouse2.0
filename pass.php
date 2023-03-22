@@ -1,23 +1,10 @@
-<!---變更密碼頁面--->
 <?php
 session_start();
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "rent";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
+include("db.php");
 $conn->close();
+error_reporting(0);
 ?>
-<?php
-    error_reporting(0);
-?>
-
+<!---變更密碼頁面--->
 <?php
     if($_SESSION["loginC"] == "yes"){
     echo '        

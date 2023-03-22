@@ -1,3 +1,12 @@
+<?php
+session_start();
+include("db.php");
+
+$acc=$_SESSION["logacc"];
+$id = $_GET["id"];
+
+$sql = "SELECT * FROM `housee` WHERE `hh_id`=$id";
+?>
 <!---搜尋結果房屋觀看版面--->
 <!DOCTYPE html>
     <head>
@@ -9,24 +18,6 @@
     <title>VR租屋網｜上傳</title>
     </head>
     <body>
-    <?php
-session_start();
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "rent";
-
-$acc=$_SESSION["logacc"];
-$id = $_GET["id"];
-echo $id;
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-$sql = "SELECT * FROM `housee` WHERE `hh_id`=$id";
-?>
     <div class="container" id="top">        
         <div>
             <ul class="navbari">

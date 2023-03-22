@@ -1,3 +1,7 @@
+<?php
+session_start();
+include("db.php");
+?>
 <!---搜尋進入後，搜尋結果頁面--->
 <!DOCTYPE html>
         <head>
@@ -9,14 +13,7 @@
             <title>VR租屋網</title>
         </head>
         <body>
-	<?php
-session_start();
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "rent";
-$conn = new mysqli($servername, $username, $password, $dbname);
-
+<?php
 $queryField = $_GET["queryField"];
 $keyWord = $_GET["queryString"];
 $queryWash = $_GET["wash"];
