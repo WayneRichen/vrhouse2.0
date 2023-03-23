@@ -62,7 +62,7 @@ a:hover{
     background-color: rgb(252, 126, 9);
     text-align: center;
     margin-top: 150px;
-    height: 600px;
+    height: 800px;
     display: block;
 }
 font{
@@ -145,8 +145,11 @@ font{
 }
 
 .sub{
-    margin-top: 10px;
+    margin-top: 5px;
     font-size: 20px;
 }
 
+.google_map {
+    height: 200;
+}
 

@@ -21,6 +21,7 @@ $sofa=$_POST["sofa"];
 $tach=$_POST["tach"];
 $pet=$_POST["pet"];
 $file=$_FILES['file'];
+$google_map = $_POST['google_map'];
 
 if ($file['error'] === UPLOAD_ERR_OK){
   echo '檔案名稱: ' . $file['name'] . '<br/>';
@@ -62,7 +63,7 @@ if ($pet==null) { $pet='false'; } else{$pet='true'; }
 
 $who=$_SESSION["logacc"];
 
-$sql = "INSERT INTO `housee`( `hh_name`, `hh_where`, `hh_address`, `hh_com`, `hh_price`, `water`, `light`, `inter`, `wash`, `ref`, `drink`, `tel`, `air`, `gas`, `bed`, `cloth`, `sofa`, `tach`, `pet`, `hh_img`, `hh_who`) VALUES ('$name','$where','$add','$com','$pri','$water','$light','$inter','$wash','$ref','$drink','$tel','$air','$gas','$bed','$cloth','$sofa','$tach','$pet','$dest','$who')";
+$sql = "INSERT INTO `housee`( `hh_name`, `hh_where`, `hh_address`, `hh_com`, `hh_price`, `water`, `light`, `inter`, `wash`, `ref`, `drink`, `tel`, `air`, `gas`, `bed`, `cloth`, `sofa`, `tach`, `pet`, `hh_img`, `hh_who`, `google_map`) VALUES ('$name','$where','$add','$com','$pri','$water','$light','$inter','$wash','$ref','$drink','$tel','$air','$gas','$bed','$cloth','$sofa','$tach','$pet','$dest','$who','$google_map')";
 
 if ($conn->query($sql) === TRUE) {  
   echo "<script>alert('上傳成功，再來請填寫預約拍攝時間');window.location.replace('index.php');</script>";

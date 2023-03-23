@@ -56,6 +56,7 @@ $sql = "SELECT * FROM `housee` WHERE `hh_id`=$id";
                 <div class="examplebottom" >
                     <h3>點擊上圖播放來觀看VR範例影片/使用ESC來取消觀看</h3>
                 </div>
+                <?php echo $row["google_map"]?>
             </div>
         </div>
 

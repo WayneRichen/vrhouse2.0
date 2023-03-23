@@ -2,7 +2,6 @@
 session_start();
 include("db.php");
 $id = $_GET["id"];
-echo $id;
 
 $name=$_POST["name"];
 $where=$_POST["where"];
@@ -41,9 +40,9 @@ if ($file['error'] === UPLOAD_ERR_OK){
       # 將檔案移至指定位置
       move_uploaded_file($tempFile, $dest);
     }
-  } else {
-    echo '錯誤代碼：' . $file['error'] . '<br/>';
-  }
+} else {
+  echo '錯誤代碼：' . $file['error'] . '<br/>';
+}
 
   if ($water==null) { $water='false'; } else{$water='true'; }
 if ($light==null) { $light='false'; } else{$light='true'; }
@@ -60,14 +59,12 @@ if ($sofa==null) { $sofa='false'; } else{$sofa='true'; }
 if ($tach==null) { $tach='false'; } else{$tach='true'; }
 if ($pet==null) { $pet='false'; } else{$pet='true'; }
 
-$sql = "UPDATE `housee` SET `hh_name`='$name',`hh_where`='$where',hh_address='$add',hh_price='$pri',water='$water',light='$light',inter='$inter',wash='$wash',ref='$ref',drink='$drink',tel='$tel',air='$air',gas='$gas',bed='$bed',cloth='$cloth',sofa='$sofa',tach='$tach',pet='$pet',hh_img='$dest' WHERE `housee`.`hh_id` = '$id'";
+$sql = "UPDATE `housee` SET `hh_name`='$name',`hh_where`='$where',hh_com='$com',hh_address='$add',hh_price='$pri',water='$water',light='$light',inter='$inter',wash='$wash',ref='$ref',drink='$drink',tel='$tel',air='$air',gas='$gas',bed='$bed',cloth='$cloth',sofa='$sofa',tach='$tach',pet='$pet',hh_img='$dest' WHERE `housee`.`hh_id` = '$id'";
 $result = $conn->query($sql);
 if ($conn->query($sql) === TRUE) {    
-    echo "<script>alert('房屋已成功更新，跳轉至我的房屋')</script>";
-    header("Refresh:1;url=house.php");
+    echo "<script>alert('房屋已成功更新，跳轉至我的房屋');window.location.replace('house.php');</script>";
   } else {
-    echo "<script>alert('更新失敗，請重新操作')</script>";
-    header("Refresh:1;url=my.php");
+    echo "<script>alert('更新失敗，請重新操作');window.location.replace('my.php');</script>";
   }
   $conn->close();
   error_reporting(0);
