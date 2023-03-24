@@ -14,22 +14,22 @@ include("db.php");
         </head>
         <body>
 <?php
-$queryField = $_GET["queryField"];
-$keyWord = $_GET["queryString"];
-$queryWash = $_GET["wash"];
-$queryRef = $_GET["ref"];
-$queryDrink = $_GET["drink"];
-$queryTel = $_GET["tel"];
-$queryAir = $_GET["air"];
-$queryGas = $_GET["gas"];
-$queryBed = $_GET["bed"];
-$queryCloth = $_GET["cloth"];
-$querySofa = $_GET["sofa"];
-$queryTach = $_GET["tach"];
-$queryPet = $_GET["pet"];
-$queryWater = $_GET["water"];
-$queryLight = $_GET["light"];
-$queryInter = $_GET["inter"];
+$queryField = $_GET["queryField"] ?? null;
+$keyWord = $_GET["queryString"] ?? null;
+$queryWash = $_GET["wash"] ?? null;
+$queryRef = $_GET["ref"] ?? null;
+$queryDrink = $_GET["drink"] ?? null;
+$queryTel = $_GET["tel"] ?? null;
+$queryAir = $_GET["air"] ?? null;
+$queryGas = $_GET["gas"] ?? null;
+$queryBed = $_GET["bed"] ?? null;
+$queryCloth = $_GET["cloth"] ?? null;
+$querySofa = $_GET["sofa"] ?? null;
+$queryTach = $_GET["tach"] ?? null;
+$queryPet = $_GET["pet"] ?? null;
+$queryWater = $_GET["water"] ?? null;
+$queryLight = $_GET["light"] ?? null;
+$queryInter = $_GET["inter"] ?? null;
 
 $searchField = "";
 
@@ -60,7 +60,7 @@ else
 
 //$sql = "SELECT * from `housee` where `$searchField` like '%$keyWord%'";   //-------------------------------------------------------------------------
 $sql ="";
-$selectAndFrom="SELECT * from `housee`";
+$selectAndFrom="SELECT * from `housee` join `user` on `user`.`acc` = `housee`.`hh_who`";
 $where=" where ";
 $condition ="";
 $sql = $selectAndFrom;
@@ -252,6 +252,7 @@ if ($condition != null && $condition != "")
     $sql = $sql.$where.$condition;
 }
 
+$sql .= 'ORDER BY is_public_benefit_lessor DESC, is_rental_certi;';
 
     try
     {
@@ -289,7 +290,13 @@ if ($condition != null && $condition != "")
                         ?>
                         <div class="house1">
                             <div class="housecon">
-                                <img src="<?php echo $row["hh_img"]?>" class="houserec" alt="房屋範例1">
+                                <div class="image_parent">
+                                    <img src="<?php echo $row["hh_img"]?>" class="houserec" alt="房屋範例1">
+                                    <div class="image_tags">
+                                        <?php if ($row['is_public_benefit_lessor']): ?><span class="public_benefit_lessor_tag">公益出租人</span><?php endif; ?>
+                                        <?php if ($row['is_rental_certi']): ?><span class="rental_certi_tag">政府認證</span><?php endif; ?>
+                                    </div>
+                                </div>
                                 <h5 class="desc"><?php echo $row["hh_name"]?></h5>
                                 <h5 class="desc"><?php echo $row["hh_where"]?>/<?php echo $row["hh_address"]?></h5>
                                 <h4 class="price">每月<?php echo $row["hh_price"]?></h4>

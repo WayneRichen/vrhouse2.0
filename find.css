@@ -82,6 +82,34 @@ a:hover{
     vertical-align: center;
     vertical-align: middle;
 }
+.image_parent {
+    position: relative;
+}
+.image_tags {
+    position: absolute;
+    right: 10%;
+    top: 0%;
+    display: flex;
+    flex-direction: column;
+}
+.public_benefit_lessor_tag {
+    background-color: #FFB576;
+    color: #C6394D;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-left: 7px;
+    padding-right: 5px;
+    margin-top: 5px;
+}
+.rental_certi_tag {
+    background-color: #9DFDC7;
+    color: #152744;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-left: 7px;
+    padding-right: 5px;
+    margin-top: 5px;
+}
 .houserec{
     width: 80%;
     height: 70%;

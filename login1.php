@@ -13,9 +13,9 @@ if ($result->num_rows > 0) {
   $row = $result->fetch_assoc();
   if ($row["pass"]==$pass) {
     $_SESSION["loginC"] = "yes";
-    $_SESSION["logname"]= $row["name"]  ;
-    $_SESSION["logacc"]= $row["acc"]  ;
-    $_SESSION["logpas"]= $row["pass"]  ;
+    $_SESSION["logname"]= $row["name"];
+    $_SESSION["logacc"]= $row["acc"];
+    $_SESSION["logpas"]= $row["pass"];
     echo "<script>alert('登入成功，點擊確認跳轉回首頁');window.location.replace('index.php');</script>";
   } else {
     echo "<script>alert('密碼錯誤，請重新登入');window.location.replace('login.php');</script>";

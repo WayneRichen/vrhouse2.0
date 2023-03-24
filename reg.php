@@ -25,12 +25,14 @@ $conn->close();
         </div>
         <div class="reg">
             <center><font size="7">註冊帳號</font></center><br>
-            <form action="reg1.php" method="post">
+            <form action="reg1.php" enctype="multipart/form-data" method="post">
                 帳號：<input name="acc" id="acc"><br><br>
                 密碼：<input name="pass" id="pass"><br><br>
                 姓名：<input name="name" id="name"><br><br>
                 信箱：<input name="mail" id="mail"><br><br>
                 手機：<input name="phone" id="phone"><br><br>
+                公益出租人身分證明：<input type="file" name="public_benefit_lessor"><br><br>
+                政府認證合法租屋證明：<input type="file" name="rental_certi"><br><br>
                 <input type="submit" value="註冊">
             </form>
         </div>

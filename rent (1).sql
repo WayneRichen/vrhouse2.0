@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： mariadb
--- 產生時間： 2023 年 03 月 23 日 13:34
+-- 產生時間： 2023 年 03 月 24 日 08:57
 -- 伺服器版本： 10.7.4-MariaDB-1:10.7.4+maria~focal
 -- PHP 版本： 8.1.17
 
@@ -115,23 +115,27 @@ CREATE TABLE `user` (
   `pass` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `name` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `mail` varchar(30) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `phone` int(20) NOT NULL
+  `phone` int(20) NOT NULL,
+  `public_benefit_lessor` varchar(200) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `is_public_benefit_lessor` tinyint(4) NOT NULL DEFAULT 0,
+  `rental_certi` varchar(200) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `is_rental_certi` tinyint(4) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- 傾印資料表的資料 `user`
 --
 
-INSERT INTO `user` (`acc`, `pass`, `name`, `mail`, `phone`) VALUES
-('0913', '0913', '曾盟鈞', '789@456', 918091358),
-('11', '11', '123', '123', 55555),
-('123', '123', 'test', 'test@', 111),
-('456', '456', '456', '789', 789),
-('777', '777', '777', '777', 777),
-('9', '9', '陳', '9@9', 999),
-('998', '998', '曾', '777', 123),
-('999', '999', '456', '123@123', 123),
-('abc', 'abc', 'abc', 'abc@mail', 123456);
+INSERT INTO `user` (`acc`, `pass`, `name`, `mail`, `phone`, `public_benefit_lessor`, `is_public_benefit_lessor`, `rental_certi`, `is_rental_certi`) VALUES
+('0913', '0913', '曾盟鈞', '789@456', 918091358, NULL, 0, NULL, 0),
+('11', '11', '123', '123', 55555, NULL, 0, NULL, 0),
+('123', '123', 'test', 'test@', 111, NULL, 0, NULL, 0),
+('456', '456', '456', '789', 789, NULL, 0, NULL, 0),
+('777', '777', '777', '777', 777, NULL, 0, NULL, 0),
+('9', '9', '陳', '9@9', 999, NULL, 0, NULL, 0),
+('998', '998', '曾', '777', 123, NULL, 0, NULL, 0),
+('999', '999', '456', '123@123', 123, NULL, 0, NULL, 0),
+('abc', 'abc', 'abc', 'abc@mail', 123456, NULL, 0, NULL, 0);
 
 -- --------------------------------------------------------
 
