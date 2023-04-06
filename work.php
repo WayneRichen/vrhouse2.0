@@ -6,6 +6,9 @@ $where=$_POST["where"];
 $add=$_POST["add"];
 $com=$_POST["com"];
 $pri=$_POST["pri"];
+$deposit=$_POST["deposit"];
+$min_rent=$_POST["min_rent"];
+$square=$_POST["square"];
 $water=$_POST["water"];
 $light=$_POST["light"];
 $inter=$_POST["inter"];
@@ -20,8 +23,12 @@ $cloth=$_POST["cloth"];
 $sofa=$_POST["sofa"];
 $tach=$_POST["tach"];
 $pet=$_POST["pet"];
-$file=$_FILES['file'];
+$parking=$_POST["parking"];
+$description=$_POST["description"];
 $google_map = $_POST['google_map'];
+$contact=$_POST["contact"];
+$is_social_housing=$_POST["is_social_housing"];
+$file=$_FILES['file'];
 
 if ($file['error'] === UPLOAD_ERR_OK){
   echo '檔案名稱: ' . $file['name'] . '<br/>';
@@ -57,13 +64,14 @@ if ($cloth==null) { $cloth='false'; } else{$cloth='true'; }
 if ($sofa==null) { $sofa='false'; } else{$sofa='true'; }
 if ($tach==null) { $tach='false'; } else{$tach='true'; }
 if ($pet==null) { $pet='false'; } else{$pet='true'; }
+if ($is_social_housing==null) { $is_social_housing=0; } else{$is_social_housing=1; }
 
 
 
 
 $who=$_SESSION["logacc"];
 
-$sql = "INSERT INTO `housee`( `hh_name`, `hh_where`, `hh_address`, `hh_com`, `hh_price`, `water`, `light`, `inter`, `wash`, `ref`, `drink`, `tel`, `air`, `gas`, `bed`, `cloth`, `sofa`, `tach`, `pet`, `hh_img`, `hh_who`, `google_map`) VALUES ('$name','$where','$add','$com','$pri','$water','$light','$inter','$wash','$ref','$drink','$tel','$air','$gas','$bed','$cloth','$sofa','$tach','$pet','$dest','$who','$google_map')";
+$sql = "INSERT INTO `housee`( `hh_name`, `hh_where`, `hh_address`, `hh_com`, `description`, `hh_price`, `water`, `light`, `inter`, `wash`, `ref`, `drink`, `tel`, `air`, `gas`, `bed`, `cloth`, `sofa`, `tach`, `pet`, `parking`, `square`, `deposit`, `min_rent`, `contact`, `is_social_housing`, `hh_img`, `hh_who`, `google_map`) VALUES ('$name','$where','$add','$com','$description','$pri','$water','$light','$inter','$wash','$ref','$drink','$tel','$air','$gas','$bed','$cloth','$sofa','$tach','$pet','$parking','$square','$deposit','$min_rent','$contact','$is_social_housing','$dest','$who','$google_map')";
 
 if ($conn->query($sql) === TRUE) {  
   echo "<script>alert('上傳成功，再來請填寫預約拍攝時間');window.location.replace('index.php');</script>";

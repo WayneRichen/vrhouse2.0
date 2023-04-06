@@ -40,9 +40,12 @@ if ($_SESSION["loginC"] != "yes") {
                     <option>烏日區</option>
                 </optgroup>                
             </select>                
-        地址：<input name="add" placeholder="輸入地址" class="add"><br><br>   
-        社區名稱：<input name="com" placeholder="輸入社區名稱 如：太子嶺東大街" class="com"><br><br>
-        價格：<input name="pri" placeholder="輸入金額" class="pri">元/每月<br><br>  
+        地址：<input name="add" placeholder="輸入地址" class="add"><br>
+        社區名稱：<input name="com" placeholder="輸入社區名稱 如：太子嶺東大街" class="com"><br>
+        價格：<input name="pri" placeholder="輸入金額" class="pri">元/每月<br>
+        押金：<input type="number" name="deposit" placeholder="輸入數字" class="add" />個月<br>
+        最短租期：<input type="number" name="min_rent" placeholder="輸入數字" class="add" />個月<br>
+        坪數：<input type="number" name="square" placeholder="輸入數字" class="add" />坪<br><br>
         <span class="rent">租金包含：</span>
             <input type="checkbox" name="water">水費
             <input type="checkbox" name="light">電費
@@ -59,8 +62,17 @@ if ($_SESSION["loginC"] != "yes") {
             <input type="checkbox" name="sofa" value="true">沙發   
             <input type="checkbox" name="tach" value="true">桌椅
             <input type="checkbox" name="pet" value="true">寵物<br><br>
-        上傳圖片：<input type="file" name="file"><br><br>  
-        嵌入 Google 地圖：<br><br><textarea class="com" name="google_map" rows="4" cols="50"></textarea><br><br>
+            <label for="parking">車位種類</label>
+            <select name="parking" id="parking" class="where">
+                <option value="無車位">無車位</option>
+                <option value="機械式">機械式</option>
+                <option value="平面式">平面式</option>
+            </select><br>
+        上傳圖片：<input type="file" name="file"><br><br>
+        特色描述：<br><textarea class="com" name="description" rows="4" cols="50"></textarea><br>
+        嵌入 Google 地圖：<br><textarea class="com" name="google_map" rows="4" cols="50"></textarea><br>
+        聯絡方式：<input type="text" name="contact" placeholder="Line 或電話號碼" class="add" /><br>
+            <input type="checkbox" name="is_social_housing" value="true">該房屋為社會住宅<br><br>
             <input type="submit" value="上傳與預約" class="sub"><br><br>
         </form>
     </div>
