@@ -26,6 +26,7 @@ error_reporting(0);
                       <li><a href="">'.$_SESSION["logname"].'先生你好</a></li>
                       <li><a href="my.php">個人資料</a></li>
                       <li><a href="upload.php">我要SHOW房</a></li>
+                      <li><a href="landlord.php">房東評價系統</a></li>
                       <li class="log"><a href="logout.php" >登出</a></li>                      
                   </ul>
               </div>
@@ -132,6 +133,7 @@ error_reporting(0);
                         <li><a href="">常見問題</a></li>
                         <li><a href="#exampletop">VR看房範例</a></li>
                         <li><a href="#rec">為您推薦</a></li>
+                        <li><a href="landlord.php">房東評價系統</a></li>
                         <li class="log"><a href="login.php" >登入</a></li>
                         <li class="reg"><a href="reg.php" >註冊</a></li>
                     </ul>

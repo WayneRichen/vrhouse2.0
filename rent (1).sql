@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： mariadb
--- 產生時間： 2023 年 04 月 06 日 02:26
+-- 產生時間： 2023 年 04 月 07 日 08:55
 -- 伺服器版本： 10.7.4-MariaDB-1:10.7.4+maria~focal
 -- PHP 版本： 8.1.17
 
@@ -114,6 +114,20 @@ INSERT INTO `housee` (`hh_id`, `hh_name`, `hh_where`, `hh_address`, `hh_com`, `d
 -- --------------------------------------------------------
 
 --
+-- 資料表結構 `landlord_review`
+--
+
+CREATE TABLE `landlord_review` (
+  `id` int(11) NOT NULL,
+  `user` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `landlord` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `comment` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
 -- 資料表結構 `user`
 --
 
@@ -185,6 +199,12 @@ ALTER TABLE `housee`
   ADD PRIMARY KEY (`hh_id`);
 
 --
+-- 資料表索引 `landlord_review`
+--
+ALTER TABLE `landlord_review`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- 資料表索引 `user`
 --
 ALTER TABLE `user`
@@ -211,6 +231,12 @@ ALTER TABLE `house`
 --
 ALTER TABLE `housee`
   MODIFY `hh_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `landlord_review`
+--
+ALTER TABLE `landlord_review`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
