@@ -31,6 +31,8 @@ $conn->close();
         <li><a href=""><?= $_SESSION["logname"] ?>先生你好</a></li>
         <li><a href="my.php">個人資料</a></li>
         <li><a href="upload.php">我要SHOW房</a></li>
+        <li><a href="landlord.php">房東評價系統</a></li>
+        <li><a href="blacklist.php">租屋黑市專區</a></li>
         <li class="log"><a href="logout.php">登出</a></li>                      
     </ul>
     </div>

@@ -1,17 +1,11 @@
 <?php
 session_start();
 include("db.php");
-$sql = "SELECT * FROM `user`;";
+$sql = "SELECT * FROM `blacklist` ORDER BY id DESC;";
 $result = $conn->query($sql);
-$landlords = [];
+$posts = [];
 while($row = $result->fetch_assoc()) {
-    $landlords[] = $row;
-}
-$sql = "SELECT `user`.`name` as `user`, `user`.`phone`, `landlord`.`name` as `landlord`, `landlord_review`.`comment`, `landlord_review`.`created_at` FROM `landlord_review` JOIN `user` ON `user`.`acc` = `landlord_review`.`user` JOIN `user` AS `landlord` on `landlord`.`acc` = `landlord_review`.`landlord`;";
-$result = $conn->query($sql);
-$comments = [];
-while($row = $result->fetch_assoc()) {
-    $comments[] = $row;
+    $posts[] = $row;
 }
 $conn->close();
 ?>
@@ -21,11 +15,11 @@ $conn->close();
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/99f3b63dd0.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="landlord.css">
+        <link rel="stylesheet" href="blacklist.css">
         <title>VR租屋網</title>
     </head>
     <body>
-        <div class="container" id="top">        
+        <div class="container" id="top">
             <div>
                 <?php if (!empty($_SESSION["logname"])): ?>
                 <ul class="navbari">
@@ -35,7 +29,7 @@ $conn->close();
                     <li><a href="upload.php">我要SHOW房</a></li>
                     <li><a href="landlord.php">房東評價系統</a></li>
                     <li><a href="blacklist.php">租屋黑市專區</a></li>
-                    <li class="log"><a href="logout.php" >登出</a></li>                      
+                    <li class="log"><a href="logout.php" >登出</a></li>
                 </ul>
                 <?php else: ?>
                 <ul class="navbari">
@@ -53,29 +47,13 @@ $conn->close();
             </div>
             <div class="main">
                 <div class="comments">
-                    <?php foreach ($comments as $comment): ?>
+                    <?php foreach ($posts as $post): ?>
                     <div class="comment">
-                        姓名：<?=$comment['user']?><br>
-                        電話：<?=$comment['phone']?><br>
-                        評價房東：<?=$comment['landlord']?><br>
-                        評價內容：<?=$comment['comment']?><br>
-                        時間：<?=$comment['created_at']?><br>
+                        <h2><?=$post['title']?></h2>
+                        <?=date('Y-m-d H:i', strtotime($post['created_at']))?>
+                        <p><?=$post['content']?><p>
                     </div>
                     <?php endforeach; ?>
-                    <?php if (!empty($_SESSION["logname"])): ?>
-                    <form class="form" action="/comment.php" method="POST">
-                        <label for="landlord">選擇房東：</label>
-                        <select id="landlord" name="landlord">
-                            <?php foreach ($landlords as $landlord): ?>
-                            <option value="<?=$landlord['acc']?>"><?=$landlord['name']?></option>
-                            <?php endforeach; ?>
-                        </select>
-                        <textarea id="com" name="com" class="com" rows="5"></textarea>
-                        <div class="sub-button">
-                            <button type="submit" class="sub">送出</button>
-                        </div>
-                    </form>
-                    <?php endif; ?>
                 </div>
             </div>
             <div class="footer">
