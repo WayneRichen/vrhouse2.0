@@ -43,7 +43,7 @@ $conn->close();
                             <div class="user-certi">
                                 公益出租人證明
                                 <div class="certi">
-                                    <a href="<?=$user['public_benefit_lessor']?>" target="_blank"><img src="<?=$user['public_benefit_lessor']?>" /></a>
+                                    <a href="/<?=$user['public_benefit_lessor']?>" target="_blank"><img src="/<?=$user['public_benefit_lessor']?>" /></a>
                                 </div>
                             </div>
                             <div class="user-certi">
@@ -54,7 +54,7 @@ $conn->close();
                             <div class="user-certi">
                                 政府認證合格租屋證明
                                 <div class="certi">
-                                    <a href="<?=$user['rental_certi']?>" target="_blank"><img src="<?=$user['rental_certi']?>" /></a>
+                                    <a href="/<?=$user['rental_certi']?>" target="_blank"><img src="/<?=$user['rental_certi']?>" /></a>
                                 </div>
                             </div>
                             <div class="user-certi">
