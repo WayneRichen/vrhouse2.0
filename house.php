@@ -3,7 +3,7 @@ session_start();
 include("db.php");
 
 $acc=$_SESSION["logacc"];
-$sql = "SELECT * FROM `housee` WHERE `hh_who`=$acc";
+$sql = "SELECT * FROM `housee` WHERE `hh_who`='$acc';";
 ?>
 <!---我的房屋頁面，房東查看房屋的地方--->
 <!DOCTYPE html>

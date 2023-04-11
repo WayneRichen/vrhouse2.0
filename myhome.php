@@ -62,7 +62,7 @@ $sql = "SELECT * FROM `housee` WHERE `hh_id`= $id";
         <div class="com">
             <span class="in">房東聯絡資訊</span>
         </div>
-        <?php $sql = "SELECT * FROM `user` WHERE `acc`=$acc"; ?>
+        <?php $sql = "SELECT * FROM `user` WHERE `acc`='$acc'"; ?>
         <?php
                         $result = $conn->query($sql);
                         while($row = $result->fetch_assoc())
