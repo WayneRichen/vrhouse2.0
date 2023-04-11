@@ -1,11 +1,11 @@
 <?php
 session_start();
 include("../db.php");
-$sql = "SELECT * FROM `blacklist` ORDER BY id DESC;";
+$sql = "SELECT `landlord_review`.`id`, `user`.`name` as `user`, `user`.`phone`, `landlord`.`name` as `landlord`, `landlord_review`.`comment`, `landlord_review`.`created_at` FROM `landlord_review` JOIN `user` ON `user`.`acc` = `landlord_review`.`user` JOIN `user` AS `landlord` on `landlord`.`acc` = `landlord_review`.`landlord` ORDER BY id DESC;";
 $result = $conn->query($sql);
-$posts = [];
+$comments = [];
 while($row = $result->fetch_assoc()) {
-    $posts[] = $row;
+    $comments[] = $row;
 }
 $conn->close();
 ?>
@@ -15,7 +15,7 @@ $conn->close();
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/99f3b63dd0.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="blacklist.css">
+        <link rel="stylesheet" href="comment.css">
         <title>VR租屋網</title>
     </head>
     <body>
@@ -31,14 +31,18 @@ $conn->close();
             </div>
             <div class="main">
                 <div class="comments">
-                    <h2>管理租屋黑市</h2>
-                    <h2><a href="/admin/write.php">新增文章</a></h2>
-                    <div class="comments">
-                    <?php foreach ($posts as $post): ?>
+                    <?php foreach ($comments as $comment): ?>
                     <div class="comment">
-                        <h2><a href="/admin/write.php?id=<?=$post['id']?>">🖊️編輯</a> <a href="/admin/delete-post.php?id=<?=$post['id']?>">❌刪除</a><?=$post['title']?></h2>
-                        <?=date('Y-m-d H:i', strtotime($post['created_at']))?>
-                        <p style="white-space: pre-wrap;"><?=$post['content']?></p>
+                        <div class="content">
+                            姓名：<?=$comment['user']?><br>
+                            電話：<?=$comment['phone']?><br>
+                            評價房東：<?=$comment['landlord']?><br>
+                            評價內容：<p style="white-space: pre-wrap;"><?=$comment['comment']?></p>
+                            時間：<?=$comment['created_at']?><br>
+                        </div>
+                        <div class="delete">
+                            <a href="/admin/delete-comment.php?id=<?=$comment['id']?>">❌刪除</a>
+                        </div>
                     </div>
                     <?php endforeach; ?>
                 </div>

@@ -47,6 +47,7 @@ $conn->close();
             </div>
             <div class="main">
                 <div class="comments">
+                    <h2>租屋黑市專區</h2>
                     <?php foreach ($posts as $post): ?>
                     <div class="comment">
                         <h2><?=$post['title']?></h2>

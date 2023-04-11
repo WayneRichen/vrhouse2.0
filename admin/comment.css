@@ -72,11 +72,18 @@ a:hover{
 }
 
 .comment {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
     padding: 10px;
 }
 
 .comment:hover {
     background-color: rgb(254, 243, 225);
+}
+
+.content {
+    width: 90%;
 }
 
 .com{
