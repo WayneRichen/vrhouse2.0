@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： mariadb
--- 產生時間： 2023 年 04 月 09 日 09:29
+-- 產生時間： 2023 年 04 月 12 日 03:09
 -- 伺服器版本： 10.7.4-MariaDB-1:10.7.4+maria~focal
 -- PHP 版本： 8.1.17
 
@@ -29,10 +29,30 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `blacklist` (
   `id` int(11) NOT NULL,
+  `category` int(100) NOT NULL,
   `title` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `content` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `category`
+--
+
+CREATE TABLE `category` (
+  `id` int(11) NOT NULL,
+  `title` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- 傾印資料表的資料 `category`
+--
+
+INSERT INTO `category` (`id`, `title`) VALUES
+(1, '了解租屋黑市'),
+(2, '最新消息');
 
 -- --------------------------------------------------------
 
@@ -207,6 +227,12 @@ ALTER TABLE `blacklist`
   ADD PRIMARY KEY (`id`);
 
 --
+-- 資料表索引 `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- 資料表索引 `house`
 --
 ALTER TABLE `house`
@@ -245,6 +271,12 @@ ALTER TABLE `vrtime`
 --
 ALTER TABLE `blacklist`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `category`
+--
+ALTER TABLE `category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `house`

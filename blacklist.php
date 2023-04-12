@@ -1,11 +1,22 @@
 <?php
 session_start();
 include("db.php");
-$sql = "SELECT * FROM `blacklist` ORDER BY id DESC;";
+if (!empty($_GET['category'])) {
+    $category = $_GET['category'];
+    $sql = "SELECT * FROM `blacklist` WHERE `blacklist`.`category` = $category ORDER BY id DESC;";
+} else {
+    $sql = "SELECT * FROM `blacklist` ORDER BY id DESC;";
+}
 $result = $conn->query($sql);
 $posts = [];
 while($row = $result->fetch_assoc()) {
     $posts[] = $row;
+}
+$sql = 'SELECT * FROM `category`;';
+$result = $conn->query($sql);
+$categories = [];
+while($row = $result->fetch_assoc()) {
+    $categories[] = $row;
 }
 $conn->close();
 ?>
@@ -48,11 +59,18 @@ $conn->close();
             <div class="main">
                 <div class="comments">
                     <h2>租屋黑市專區</h2>
+                    <?php foreach ($categories as $category): ?>
+                        <?php if (isset($_GET['category']) && $_GET['category'] == $category['id']) {
+                            echo '<i>' . $category['title'] . '</i>';
+                        } else {
+                            echo '<a href="/blacklist.php?category=' . $category['id'] . '">' . $category['title'] . '</a>';
+                        }?>
+                    <?php endforeach; ?>
                     <?php foreach ($posts as $post): ?>
                     <div class="comment">
                         <h2><?=$post['title']?></h2>
                         <?=date('Y-m-d H:i', strtotime($post['created_at']))?>
-                        <p><?=$post['content']?><p>
+                        <p style="white-space: pre-wrap; line-height: 1.6;"><?=$post['content']?><p>
                     </div>
                     <?php endforeach; ?>
                 </div>

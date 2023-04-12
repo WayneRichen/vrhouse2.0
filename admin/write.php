@@ -1,12 +1,18 @@
 <?php
 session_start();
 include("../db.php");
-$post = ['id' => null, 'title' => null, 'content' => null];
+$post = ['id' => null, 'category' => 0, 'title' => null, 'content' => null];
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $sql = "SELECT * FROM `blacklist` WHERE id = $id;";
     $result = $conn->query($sql);
     $post = $result->fetch_assoc();
+}
+$sql = 'SELECT * FROM `category`;';
+$result = $conn->query($sql);
+$categories = [];
+while($row = $result->fetch_assoc()) {
+    $categories[] = $row;
 }
 $conn->close();
 ?>
@@ -39,6 +45,12 @@ $conn->close();
                         <?php endif; ?>
                         標題
                         <input type="text" name="title" class="add" value="<?=$post['title']?>"/><br>
+                        分類
+                        <select name="category">
+                        <?php foreach ($categories as $category): ?>
+                            <option value="<?=$category['id']?>" <?=$post['category'] == $category['id'] ? 'selected' :''?>><?=$category['title']?></option>
+                        <?php endforeach; ?>
+                        </select><br><br>
                         內容
                         <textarea rows="10" class="com" name="content"><?=$post['content']?></textarea>
                         <div class="sub-button">

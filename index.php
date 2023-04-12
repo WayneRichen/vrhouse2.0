@@ -75,8 +75,7 @@ error_reporting(0);
                       </form>
                   </div>
               </div>
-              
-              <div class="rec" id="rec">            
+              <!-- <div class="rec" id="rec">            
                   <h2 style="text-align: center;padding-top: 20px;">為你推薦</h2>
                   <div class="house">
                       <img src="images/houseex1.jpg" class="houserec" alt="房屋範例1">
@@ -88,7 +87,7 @@ error_reporting(0);
                       <h5 class="desc">台中市/南屯區/永春南路50巷5號</h5>
                       <h4 class="price">5800元/每月</h4>
                   </div>
-              </div>
+              </div> -->
               <div class="exampletop" id="exampletop">
                   <h3>往下滑動來使用VR看房範例功能</h3>
               </div>
@@ -185,7 +184,7 @@ error_reporting(0);
                     </div>
                 </div>
                 
-                <div class="rec" id="rec">            
+                <!-- <div class="rec" id="rec">            
                     <h2 style="text-align: center;padding-top: 20px;">為你推薦</h2>
                     <div class="house">
                         <img src="images/houseex1.jpg" class="houserec" alt="房屋範例1">
@@ -197,7 +196,7 @@ error_reporting(0);
                         <h5 class="desc">台中市/南屯區/永春南路50巷5號</h5>
                         <h4 class="price">5800元/每月</h4>
                     </div>
-                </div>
+                </div> -->
                 <div class="exampletop" id="exampletop">
                     <h3>往下滑動來使用VR看房範例功能</h3>
                 </div>

@@ -59,7 +59,7 @@ $conn->close();
                         姓名：<?=$comment['user']?><br>
                         電話：<?=$comment['phone']?><br>
                         評價房東：<?=$comment['landlord']?><br>
-                        評價內容：<p style="white-space: pre-wrap;"><?=$comment['comment']?></p>
+                        評價內容：<p style="white-space: pre-wrap; line-height: 1.6;"><?=$comment['comment']?></p>
                         時間：<?=$comment['created_at']?><br>
                     </div>
                     <?php endforeach; ?>

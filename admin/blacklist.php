@@ -36,9 +36,14 @@ $conn->close();
                     <div class="comments">
                     <?php foreach ($posts as $post): ?>
                     <div class="comment">
-                        <h2><a href="/admin/write.php?id=<?=$post['id']?>">🖊️編輯</a> <a href="/admin/delete-post.php?id=<?=$post['id']?>">❌刪除</a><?=$post['title']?></h2>
+                        <div class="title-edit">
+                            <span class="title"><?=$post['title']?></span>
+                            <div class="edit">
+                                <a href="/admin/write.php?id=<?=$post['id']?>">🖊️編輯</a> <a href="/admin/delete-post.php?id=<?=$post['id']?>">❌刪除</a>
+                            </div>
+                        </div>
                         <?=date('Y-m-d H:i', strtotime($post['created_at']))?>
-                        <p style="white-space: pre-wrap;"><?=$post['content']?></p>
+                        <p style="white-space: pre-wrap; line-height: 1.6;"><?=$post['content']?></p>
                     </div>
                     <?php endforeach; ?>
                 </div>

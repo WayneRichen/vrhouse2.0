@@ -31,18 +31,21 @@ $conn->close();
             </div>
             <div class="main">
                 <div class="comments">
+                    <h2>管理房東評價</h2>
                     <?php foreach ($comments as $comment): ?>
                     <div class="comment">
-                        <div class="content">
-                            姓名：<?=$comment['user']?><br>
-                            電話：<?=$comment['phone']?><br>
-                            評價房東：<?=$comment['landlord']?><br>
-                            評價內容：<p style="white-space: pre-wrap;"><?=$comment['comment']?></p>
-                            時間：<?=$comment['created_at']?><br>
+                        <div class="content-delete">
+                            <div class="content">
+                                姓名：<?=$comment['user']?><br>
+                                電話：<?=$comment['phone']?><br>
+                                評價房東：<?=$comment['landlord']?><br>
+                            </div>
+                            <div class="delete">
+                                <a href="/admin/delete-comment.php?id=<?=$comment['id']?>">❌刪除</a>
+                            </div>
                         </div>
-                        <div class="delete">
-                            <a href="/admin/delete-comment.php?id=<?=$comment['id']?>">❌刪除</a>
-                        </div>
+                        評價內容：<p style="white-space: pre-wrap; line-height: 1.6;"><?=$comment['comment']?></p>
+                        時間：<?=$comment['created_at']?><br>
                     </div>
                     <?php endforeach; ?>
                 </div>

@@ -42,7 +42,7 @@ $sql = "SELECT * FROM `housee` WHERE `hh_who`='$acc';";
                                 <h5 class="desc"><?php echo $row["hh_name"]?></h5>
                                 <h5 class="desc"><?php echo $row["hh_where"]?>/<?php echo $row["hh_address"]?></h5>
                                 <h4 class="price">每月<?php echo $row["hh_price"]?></h4>
-                                <a href="myhome.php?id=<?php echo $row["hh_id"]?>" class="in">觀看房屋</a></a>
+                                <a href="housepage.php?id=<?php echo $row["hh_id"]?>" class="in">觀看房屋</a></a>
                                 <a href="edit1.php?id=<?php echo $row["hh_id"]?>" class="del">編輯房屋</a></a>
                                 <a href="delhome.php?id=<?php echo $row["hh_id"]?>" class="del">下架房屋</a></a>
                             </div>
