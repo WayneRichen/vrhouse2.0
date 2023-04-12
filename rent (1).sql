@@ -1,7 +1,6 @@
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
---
 -- 主機： mariadb
 -- 產生時間： 2023 年 04 月 12 日 03:09
 -- 伺服器版本： 10.7.4-MariaDB-1:10.7.4+maria~focal
