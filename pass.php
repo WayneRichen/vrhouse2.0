@@ -59,7 +59,6 @@ error_reporting(0);
                         <li><a href="">聯絡我們</a></li>
                         <li><a href="">常見問題</a></li>
                         <li><a href="#exampletop">VR看房範例</a></li>
-                        <li><a href="#rec">為您推薦</a></li>
                         <li class="log"><a href="login.php" >登入</a></li>
                         <li class="reg"><a href="reg.php" >註冊</a></li>
                     </ul>

@@ -168,7 +168,7 @@ CREATE TABLE `user` (
   `pass` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `name` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `mail` varchar(30) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `phone` int(20) NOT NULL,
+  `phone` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `public_benefit_lessor` varchar(200) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
   `is_public_benefit_lessor` tinyint(4) NOT NULL DEFAULT 0,
   `rental_certi` varchar(200) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
@@ -181,15 +181,15 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`acc`, `pass`, `name`, `mail`, `phone`, `public_benefit_lessor`, `is_public_benefit_lessor`, `rental_certi`, `is_rental_certi`, `is_admin`) VALUES
-('0913', '0913', '曾盟鈞', '789@456', 918091358, NULL, 0, NULL, 0, 0),
-('11', '11', '123', '123', 55555, NULL, 0, NULL, 0, 0),
-('123', '123', 'test', 'test@', 111, NULL, 0, NULL, 0, 0),
-('456', '456', '456', '789', 789, NULL, 0, NULL, 0, 0),
-('777', '777', '777', '777', 777, NULL, 0, NULL, 0, 0),
-('9', '9', '陳', '9@9', 999, NULL, 0, NULL, 0, 0),
-('998', '998', '曾', '777', 123, NULL, 0, NULL, 0, 0),
-('999', '999', '456', '123@123', 123, NULL, 1, NULL, 1, 0),
-('abc', 'abc', 'abc', 'abc@mail', 123456, NULL, 0, NULL, 0, 0);
+('0913', '0913', '曾盟鈞', '789@456', '0918091358', NULL, 0, NULL, 0, 0),
+('11', '11', '123', '123', '55555', NULL, 0, NULL, 0, 0),
+('123', '123', 'test', 'test@', '111', NULL, 0, NULL, 0, 0),
+('456', '456', '456', '789', '789', NULL, 0, NULL, 0, 0),
+('777', '777', '777', '777', '777', NULL, 0, NULL, 0, 0),
+('9', '9', '陳', '9@9', '999', NULL, 0, NULL, 0, 0),
+('998', '998', '曾', '777', '123', NULL, 0, NULL, 0, 0),
+('999', '999', '456', '123@123', '123', NULL, 1, NULL, 1, 0),
+('abc', 'abc', 'abc', 'abc@mail', '123456', NULL, 0, NULL, 0, 0);
 
 -- --------------------------------------------------------
 

@@ -48,7 +48,6 @@ $conn->close();
                     <li><a href="">聯絡我們</a></li>
                     <li><a href="">常見問題</a></li>
                     <li><a href="#exampletop">VR看房範例</a></li>
-                    <li><a href="#rec">為您推薦</a></li>
                     <li><a href="landlord.php">房東評價系統</a></li>
                     <li><a href="blacklist.php">租屋黑市專區</a></li>
                     <li class="log"><a href="login.php" >登入</a></li>
