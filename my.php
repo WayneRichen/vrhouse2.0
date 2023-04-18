@@ -10,9 +10,6 @@ $result = $conn->query($sql);
 $user = $result->fetch_assoc();
 $conn->close();
 ?>
-<?php
-    error_reporting(0);
-?>
 
 <!DOCTYPE html>
 <head>
