@@ -1,11 +1,11 @@
 <?php
 session_start();
 include("../db.php");
-$sql = "SELECT * FROM `user` WHERE `public_benefit_lessor` IS NOT NULL OR `rental_certi` IS NOT NULL;";
+$sql = "SELECT * FROM `housee` WHERE `panorama_images` IS NOT NULL;";
 $result = $conn->query($sql);
-$users = [];
+$houses = [];
 while($row = $result->fetch_assoc()) {
-    $users[] = $row;
+    $houses[] = $row;
 }
 $conn->close();
 ?>
@@ -15,7 +15,7 @@ $conn->close();
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/99f3b63dd0.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="panorama.css">
         <title>VR租屋網</title>
     </head>
     <body>
@@ -32,36 +32,34 @@ $conn->close();
             </div>
             <div class="main">
                 <div class="comments">
-                    <h2>房東審核</h2>
-                    <form class="form" action="/admin/review.php" method="POST">
-                        <?php foreach ($users as $user): ?>
-                        <div class="user">
-                            <div class="user-info">
-                                申請人姓名：<?=$user['name']?><br>
-                                申請人 Email：<?=$user['mail']?><br>
-                                申請人手機：<?=$user['phone']?><br>
+                    <h2>編輯環景圖</h2>
+                    <div class="house">
+                        <div class="house-info">
+                            房屋名稱
+                        </div>
+                        <div class="house-panorama">
+                            環景圖
+                        </div>
+                        <div class="house-panorama">
+                            VR 程式碼
+                        </div>
+                    </div>
+                    <form class="form" action="/admin/panorama-update.php" method="POST">
+                        <?php foreach ($houses as $house): ?>
+                        <div class="house">
+                            <div class="house-info">
+                             <?=$house['hh_name']?>
                             </div>
-                            <div class="user-certi">
-                                公益出租人證明
-                                <div class="certi">
-                                    <a href="/<?=$user['public_benefit_lessor']?>" target="_blank"><img src="/<?=$user['public_benefit_lessor']?>" /></a>
+                            <div class="house-panorama">
+                                <?php $house['panorama_images'] = json_decode($house['panorama_images'], true); ?>
+                                <?php foreach ($house['panorama_images'] as $image): ?>
+                                <div class="panorama">
+                                    <a href="/<?=$image?>" target="_blank"><img src="/<?=$image?>" /></a>
                                 </div>
+                                <?php endforeach; ?>
                             </div>
-                            <div class="user-certi">
-                                <input type="hidden" name="<?=$user['acc']?>-public_benefit_lessor">
-                                <input type="checkbox" id="<?=$user['acc']?>-public_benefit_lessor" name="<?=$user['acc']?>-public_benefit_lessor" <?= $user['is_public_benefit_lessor']?'checked':'' ?>>
-                                <label for="<?=$user['acc']?>-public_benefit_lessor">允取成為公益出租人</label>
-                            </div>
-                            <div class="user-certi">
-                                政府認證合格租屋證明
-                                <div class="certi">
-                                    <a href="/<?=$user['rental_certi']?>" target="_blank"><img src="/<?=$user['rental_certi']?>" /></a>
-                                </div>
-                            </div>
-                            <div class="user-certi">
-                                <input type="hidden" name="<?=$user['acc']?>-rental_certi" >
-                                <input type="checkbox" id="<?=$user['acc']?>-rental_certi" name="<?=$user['acc']?>-rental_certi" <?= $user['is_rental_certi']?'checked':'' ?>>
-                                <label for="<?=$user['acc']?>-rental_certi">允取成為政府認證合格租屋</label>
+                            <div class="house-panorama">
+                                <textarea name="<?=$house['hh_id']?>-vr_script"><?=$house['vr_script']?></textarea>
                             </div>
                         </div>
                         <?php endforeach; ?>

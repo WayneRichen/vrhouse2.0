@@ -34,6 +34,7 @@ $conn->close();
                     <li><a href="/admin/index.php">房東審核</a></li>
                     <li><a href="/admin/comment.php">管理房東評價</a></li>
                     <li><a href="/admin/blacklist.php">管理租屋黑市</a></li>
+                    <li><a href="/admin/panorama.php">編輯環景圖</a></li>
                 </ul>
             </div>
             <div class="main">

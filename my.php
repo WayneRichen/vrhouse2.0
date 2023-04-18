@@ -49,6 +49,15 @@ $conn->close();
                 <form action="delac.php"><input type="submit" class="del" value="註銷帳號"></form>
             </div>
         </div>
+        <form action="certi-apply.php" method="POST" enctype="multipart/form-data" >
+            <?php if ($user['is_public_benefit_lessor'] == 0): ?>
+            上傳公益出租人身分證明：<input type="file" name="public_benefit_lessor"><br><br>
+            <?php endif; ?>
+            <?php if ($user['is_rental_certi'] == 0): ?>
+            上傳政府認證合法租屋證明：<input type="file" name="rental_certi"><br><br>
+            <?php endif; ?>
+            <button type="submit">送出</button>
+        </form>
         <?php if ($user['is_public_benefit_lessor'] || $user['is_rental_certi']): ?>
             <font size="5">我的標章</font><br>
             <?php if ($user['is_public_benefit_lessor']):?><span class="public_benefit_lessor_tag">公益出租人</span><?php endif;?>

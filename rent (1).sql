@@ -1,8 +1,9 @@
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
+--
 -- 主機： mariadb
--- 產生時間： 2023 年 04 月 12 日 03:09
+-- 產生時間： 2023 年 04 月 18 日 08:31
 -- 伺服器版本： 10.7.4-MariaDB-1:10.7.4+maria~focal
 -- PHP 版本： 8.1.17
 
@@ -126,22 +127,24 @@ CREATE TABLE `housee` (
   `is_social_housing` int(10) NOT NULL DEFAULT 0,
   `hh_img` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
   `hh_who` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `google_map` text NOT NULL
+  `google_map` text NOT NULL,
+  `panorama_images` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
+  `vr_script` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- 傾印資料表的資料 `housee`
 --
 
-INSERT INTO `housee` (`hh_id`, `hh_name`, `hh_where`, `hh_address`, `hh_com`, `description`, `hh_price`, `water`, `light`, `inter`, `wash`, `ref`, `drink`, `tel`, `air`, `gas`, `bed`, `cloth`, `sofa`, `tach`, `pet`, `parking`, `square`, `deposit`, `min_rent`, `contact`, `is_social_housing`, `hh_img`, `hh_who`, `google_map`) VALUES
-(30, '456', '清水區', '南屯區', '太子', '', '7000', 'true', 'false', 'false', 'false', 'false', 'true', 'false', 'false', 'false', 'true', 'true', 'true', 'false', 'false', NULL, 0, NULL, 0, NULL, 0, NULL, '999', ''),
-(31, '曾13', '南屯區', '永春南路61', '太子大街', '', '45600', 'true', 'false', 'false', 'false', 'true', 'false', 'false', 'false', 'false', 'false', 'false', 'true', 'true', 'false', NULL, 0, NULL, 0, NULL, 0, NULL, '999', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.9533896300827!2d120.60929631481771!3d24.138274979765193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693e7daaa2d465%3A0x48b2f61f010788e3!2zNDA45Y-w5Lit5biC5Y2X5bGv5Y2A5rC45pil5Y2X6LevNjHomZ8!5e0!3m2!1szh-TW!2stw!4v1679577171689!5m2!1szh-TW!2stw\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>'),
-(32, '11', '南屯區', '南屯區', '1234', '', '10000', 'true', 'false', 'false', 'true', 'false', 'false', 'false', 'false', 'false', 'false', 'true', 'true', 'true', 'false', NULL, 0, NULL, 0, NULL, 0, NULL, '999', ''),
-(33, '456', '南屯區', '永春南路61', '1234', '', '10000', 'true', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', NULL, 0, NULL, 0, NULL, 0, '/images//000.jpg', '999', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.9533896300827!2d120.60929631481771!3d24.138274979765193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693e7daaa2d465%3A0x48b2f61f010788e3!2zNDA45Y-w5Lit5biC5Y2X5bGv5Y2A5rC45pil5Y2X6LevNjHomZ8!5e0!3m2!1szh-TW!2stw!4v1679577171689!5m2!1szh-TW!2stw\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>'),
-(34, '456', '清水區', '南屯區', '1234', '', '10000', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', NULL, 0, NULL, 0, NULL, 0, 'images/000.jpg', '999', ''),
-(35, '456', '清水區', '南屯區', '太子', '', '10000', 'true', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', NULL, 0, NULL, 0, NULL, 0, '', '456', ''),
-(36, '曾', '清水區', '永春南路', '1234', '', '10000', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', NULL, 0, NULL, 0, NULL, 0, '', 'abc', ''),
-(37, '太子大街501號房', '南屯區', '永春南路61巷12之20號', '太子嶺東大街', '', '8000', 'true', 'true', 'false', 'false', 'false', 'true', 'false', 'false', 'false', 'false', 'true', 'true', 'false', 'false', NULL, 0, NULL, 0, NULL, 0, 'images/哈們.jpg', '0913', '');
+INSERT INTO `housee` (`hh_id`, `hh_name`, `hh_where`, `hh_address`, `hh_com`, `description`, `hh_price`, `water`, `light`, `inter`, `wash`, `ref`, `drink`, `tel`, `air`, `gas`, `bed`, `cloth`, `sofa`, `tach`, `pet`, `parking`, `square`, `deposit`, `min_rent`, `contact`, `is_social_housing`, `hh_img`, `hh_who`, `google_map`, `panorama_images`, `vr_script`) VALUES
+(30, '456', '清水區', '南屯區', '太子', '', '7000', 'true', 'false', 'false', 'false', 'false', 'true', 'false', 'false', 'false', 'true', 'true', 'true', 'false', 'false', NULL, 0, NULL, 0, NULL, 0, NULL, '999', '', NULL, NULL),
+(31, '曾13', '南屯區', '永春南路61', '太子大街', '', '45600', 'true', 'false', 'false', 'false', 'true', 'false', 'false', 'false', 'false', 'false', 'false', 'true', 'true', 'false', NULL, 0, NULL, 0, NULL, 0, NULL, '999', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.9533896300827!2d120.60929631481771!3d24.138274979765193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693e7daaa2d465%3A0x48b2f61f010788e3!2zNDA45Y-w5Lit5biC5Y2X5bGv5Y2A5rC45pil5Y2X6LevNjHomZ8!5e0!3m2!1szh-TW!2stw!4v1679577171689!5m2!1szh-TW!2stw\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>', NULL, NULL),
+(32, '11', '南屯區', '南屯區', '1234', '', '10000', 'true', 'false', 'false', 'true', 'false', 'false', 'false', 'false', 'false', 'false', 'true', 'true', 'true', 'false', NULL, 0, NULL, 0, NULL, 0, NULL, '999', '', NULL, NULL),
+(33, '456', '南屯區', '永春南路61', '1234', '', '10000', 'true', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', NULL, 0, NULL, 0, NULL, 0, '/images//000.jpg', '999', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.9533896300827!2d120.60929631481771!3d24.138274979765193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693e7daaa2d465%3A0x48b2f61f010788e3!2zNDA45Y-w5Lit5biC5Y2X5bGv5Y2A5rC45pil5Y2X6LevNjHomZ8!5e0!3m2!1szh-TW!2stw!4v1679577171689!5m2!1szh-TW!2stw\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>', NULL, NULL),
+(34, '456', '清水區', '南屯區', '1234', '', '10000', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', NULL, 0, NULL, 0, NULL, 0, 'images/000.jpg', '999', '', NULL, NULL),
+(35, '456', '清水區', '南屯區', '太子', '', '10000', 'true', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', NULL, 0, NULL, 0, NULL, 0, '', '456', '', NULL, NULL),
+(36, '曾', '清水區', '永春南路', '1234', '', '10000', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', NULL, 0, NULL, 0, NULL, 0, '', 'abc', '', NULL, NULL),
+(37, '太子大街501號房', '南屯區', '永春南路61巷12之20號', '太子嶺東大街', '', '8000', 'true', 'true', 'false', 'false', 'false', 'true', 'false', 'false', 'false', 'false', 'true', 'true', 'false', 'false', NULL, 0, NULL, 0, NULL, 0, 'images/哈們.jpg', '0913', '', NULL, NULL);
 
 -- --------------------------------------------------------
 

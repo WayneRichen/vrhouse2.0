@@ -74,13 +74,15 @@ $sql = "SELECT * FROM `housee` WHERE `hh_id`=$id";
                     <span>最短租期<?php echo $row["min_rent"]?>個月</span><br>
                     <span class="price">租金每月<?php echo $row["hh_price"]?></span>
                 </div>
+                <?php if ($row['vr_script']): ?>
                 <div class="exampletop" id="exampletop">
                     <h3>往下滑動來使用VR看房</h3><a href="" target="_blank" class="blank">點此來用新分頁觀賞</a>
                 </div>
-                <iframe class="vr" width="100%" height="640" frameborder="0" allow="xr-spatial-tracking; gyroscope; accelerometer" allowfullscreen scrolling="no" src="https://kuula.co/share/collection/79Zxb?logo=0&info=0&fs=1&vr=1&sd=1&initload=0&thumbs=1"></iframe>
+                <?=$row['vr_script']?>
                 <div class="examplebottom" >
                     <h3>點擊上圖播放來觀看VR範例影片/使用ESC來取消觀看</h3>
                 </div>
+                <?php endif; ?>
                 <?php echo $row["google_map"]?>
             </div>
         </div>

@@ -71,6 +71,7 @@ if ($_SESSION["loginC"] != "yes") {
                 <option value="平面式">平面式</option>
             </select><br>
         上傳圖片：<input type="file" name="file"><br><br>
+        環景圖（多選）：<input type='file' name='panorama_images[]' multiple><br><br>
         特色描述：<br><textarea class="com" name="description" rows="4" cols="50"></textarea><br>
         嵌入 Google 地圖：<br><textarea class="com" name="google_map" rows="4" cols="50"></textarea><br>
         聯絡方式：<input type="text" name="contact" placeholder="Line 或電話號碼" class="add" /><br>

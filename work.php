@@ -29,6 +29,7 @@ $google_map = $_POST['google_map'];
 $contact=$_POST["contact"];
 $is_social_housing=$_POST["is_social_housing"];
 $file=$_FILES['file'];
+$panorama_images=$_FILES['panorama_images'];
 
 if ($file['error'] === UPLOAD_ERR_OK){
   echo '檔案名稱: ' . $file['name'] . '<br/>';
@@ -37,18 +38,42 @@ if ($file['error'] === UPLOAD_ERR_OK){
   echo '暫存名稱: ' . $file['tmp_name'] . '<br/>';
 
   # 檢查檔案是否已經存在
-  if (file_exists('images/' . $file['name'])){
+  if (file_exists('images/' . $file['name'])) {
     echo '檔案已存在。<br/>';
+    exit;
   } else {
     $tempFile = $file['tmp_name'];
-    $dest = 'images/' . $file['name'];
+    $image_dest = 'images/' . $file['name'];
 
     # 將檔案移至指定位置
-    move_uploaded_file($tempFile, $dest);
+    move_uploaded_file($tempFile, $image_dest);
   }
 } else {
   echo '錯誤代碼：' . $file['error'] . '<br/>';
+  exit;
 }
+
+$panorama_images_dest = [];
+foreach ($panorama_images['error'] as $key => $error) {
+  if ($error === UPLOAD_ERR_OK) {
+    # 檢查檔案是否已經存在
+    if (file_exists('images/' . $panorama_images['name'][$key])){
+      echo '檔案已存在。<br/>';
+      exit;
+    } else {
+      $tempFile = $panorama_images['tmp_name'][$key];
+      $dest = 'images/' . $panorama_images['name'][$key];
+      $panorama_images_dest[] = $dest;
+
+      # 將檔案移至指定位置
+      move_uploaded_file($tempFile, $dest);
+    }
+  } else {
+    echo '錯誤代碼：' . $error . '<br/>';
+    exit;
+  }
+}
+$panorama_images_dest = json_encode($panorama_images_dest);
 
 if ($water==null) { $water='false'; } else{$water='true'; }
 if ($light==null) { $light='false'; } else{$light='true'; }
@@ -71,7 +96,7 @@ if ($is_social_housing==null) { $is_social_housing=0; } else{$is_social_housing=
 
 $who=$_SESSION["logacc"];
 
-$sql = "INSERT INTO `housee`( `hh_name`, `hh_where`, `hh_address`, `hh_com`, `description`, `hh_price`, `water`, `light`, `inter`, `wash`, `ref`, `drink`, `tel`, `air`, `gas`, `bed`, `cloth`, `sofa`, `tach`, `pet`, `parking`, `square`, `deposit`, `min_rent`, `contact`, `is_social_housing`, `hh_img`, `hh_who`, `google_map`) VALUES ('$name','$where','$add','$com','$description','$pri','$water','$light','$inter','$wash','$ref','$drink','$tel','$air','$gas','$bed','$cloth','$sofa','$tach','$pet','$parking','$square','$deposit','$min_rent','$contact','$is_social_housing','$dest','$who','$google_map')";
+$sql = "INSERT INTO `housee`( `hh_name`, `hh_where`, `hh_address`, `hh_com`, `description`, `hh_price`, `water`, `light`, `inter`, `wash`, `ref`, `drink`, `tel`, `air`, `gas`, `bed`, `cloth`, `sofa`, `tach`, `pet`, `parking`, `square`, `deposit`, `min_rent`, `contact`, `is_social_housing`, `hh_img`, `hh_who`, `google_map`, `panorama_images`) VALUES ('$name','$where','$add','$com','$description','$pri','$water','$light','$inter','$wash','$ref','$drink','$tel','$air','$gas','$bed','$cloth','$sofa','$tach','$pet','$parking','$square','$deposit','$min_rent','$contact','$is_social_housing','$image_dest','$who','$google_map','$panorama_images_dest')";
 
 if ($conn->query($sql) === TRUE) {  
   echo "<script>alert('上傳成功，再來請填寫預約拍攝時間');window.location.replace('index.php');</script>";
