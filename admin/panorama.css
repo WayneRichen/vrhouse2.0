@@ -50,6 +50,10 @@ body{
     padding-left: 1200px;
 }
 
+a {
+    color: rgb(255, 75, 4);
+    text-decoration: none;
+}
 
 a:hover{
     background-color: rgb(252, 126, 9);

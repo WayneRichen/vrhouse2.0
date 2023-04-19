@@ -51,10 +51,10 @@ $conn->close();
                         <?php foreach ($houses as $house): ?>
                         <div class="house">
                             <div class="house-id">
-                                <?=$house['hh_id']?>
+                                <a href="/housepage.php?id=<?=$house['hh_id']?>"><?=$house['hh_id']?></a>
                             </div>
                             <div class="house-name">
-                                <?=$house['hh_name']?>
+                                <a href="/housepage.php?id=<?=$house['hh_id']?>"><?=$house['hh_name']?></a>
                             </div>
                             <div class="house-panorama">
                                 <?php if ($house['panorama_images']): ?>
