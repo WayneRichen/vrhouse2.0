@@ -74,8 +74,12 @@ a:hover{
     display: flex;
 }
 
-.house-info {
-    width: 20%;
+.house-id {
+    width: 5%;
+}
+
+.house-name {
+    width: 15%;
 }
 
 .house-panorama {

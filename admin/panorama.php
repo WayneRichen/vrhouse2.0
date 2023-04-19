@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("../db.php");
-$sql = "SELECT * FROM `housee` WHERE `panorama_images` IS NOT NULL;";
+$sql = "SELECT * FROM `housee`;";
 $result = $conn->query($sql);
 $houses = [];
 while($row = $result->fetch_assoc()) {
@@ -34,7 +34,10 @@ $conn->close();
                 <div class="comments">
                     <h2>編輯環景圖</h2>
                     <div class="house">
-                        <div class="house-info">
+                        <div class="house-id">
+                            id
+                        </div>
+                        <div class="house-name">
                             房屋名稱
                         </div>
                         <div class="house-panorama">
@@ -47,16 +50,21 @@ $conn->close();
                     <form class="form" action="/admin/panorama-update.php" method="POST">
                         <?php foreach ($houses as $house): ?>
                         <div class="house">
-                            <div class="house-info">
-                             <?=$house['hh_name']?>
+                            <div class="house-id">
+                                <?=$house['hh_id']?>
+                            </div>
+                            <div class="house-name">
+                                <?=$house['hh_name']?>
                             </div>
                             <div class="house-panorama">
+                                <?php if ($house['panorama_images']): ?>
                                 <?php $house['panorama_images'] = json_decode($house['panorama_images'], true); ?>
                                 <?php foreach ($house['panorama_images'] as $image): ?>
                                 <div class="panorama">
                                     <a href="/<?=$image?>" target="_blank"><img src="/<?=$image?>" /></a>
                                 </div>
                                 <?php endforeach; ?>
+                                <?php endif; ?>
                             </div>
                             <div class="house-panorama">
                                 <textarea name="<?=$house['hh_id']?>-vr_script"><?=$house['vr_script']?></textarea>
