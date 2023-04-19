@@ -69,6 +69,9 @@ font{
     display: block;
     padding-top: 20px;
 }
+.required {
+    color: blanchedalmond;
+}
 
 .where{
     cursor: pointer;

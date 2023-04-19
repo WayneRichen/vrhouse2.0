@@ -68,7 +68,7 @@ foreach ($panorama_images['error'] as $key => $error) {
       # 將檔案移至指定位置
       move_uploaded_file($tempFile, $dest);
     }
-  } else {
+  } elseif ($error != UPLOAD_ERR_NO_FILE) {
     echo '錯誤代碼：' . $error . '<br/>';
     exit;
   }

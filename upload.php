@@ -36,20 +36,21 @@ if ($_SESSION["loginC"] != "yes") {
     <div class="up">
         <font size="7">房屋資訊填寫</font><br><hr><br>
         <form action="work.php" method="post" enctype="multipart/form-data">
-        房屋名稱：<input name="name" placeholder="輸入名字" class="add"><br> 
-        市區：<select name="where" class="where">
+        <span class="required">*</span>為必填<br><br>
+        <span class="required">*</span>房屋名稱：<input name="name" placeholder="輸入名字" class="add"><br> 
+        <span class="required">*</span>市區：<select name="where" class="where">
                 <optgroup label="台中市">
                     <option>清水區</option>
                     <option>南屯區</option>
                     <option>烏日區</option>
                 </optgroup>                
             </select>                
-        地址：<input name="add" placeholder="輸入地址" class="add"><br>
-        社區名稱：<input name="com" placeholder="輸入社區名稱 如：太子嶺東大街" class="com"><br>
-        價格：<input name="pri" placeholder="輸入金額" class="pri">元/每月<br>
-        押金：<input type="number" name="deposit" placeholder="輸入數字" class="add" />個月<br>
-        最短租期：<input type="number" name="min_rent" placeholder="輸入數字" class="add" />個月<br>
-        坪數：<input type="number" name="square" placeholder="輸入數字" class="add" />坪<br><br>
+        <span class="required">*</span>地址：<input name="add" placeholder="輸入地址" class="add"><br>
+        <span class="required">*</span>社區名稱：<input name="com" placeholder="輸入社區名稱 如：太子嶺東大街" class="com"><br>
+        <span class="required">*</span>價格：<input name="pri" placeholder="輸入金額" class="pri">元/每月<br>
+        <span class="required">*</span>押金：<input type="number" name="deposit" placeholder="輸入數字" class="add" />個月<br>
+        <span class="required">*</span>最短租期：<input type="number" name="min_rent" placeholder="輸入數字" class="add" />個月<br>
+        <span class="required">*</span>坪數：<input type="number" name="square" placeholder="輸入數字" class="add" />坪<br><br>
         <span class="rent">租金包含：</span>
             <input type="checkbox" name="water">水費
             <input type="checkbox" name="light">電費
@@ -72,11 +73,11 @@ if ($_SESSION["loginC"] != "yes") {
                 <option value="機械式">機械式</option>
                 <option value="平面式">平面式</option>
             </select><br>
-        上傳圖片：<input type="file" name="file"><br><br>
+        <span class="required">*</span>上傳圖片：<input type="file" name="file"><br><br>
         環景圖（多選）：<input type='file' name='panorama_images[]' multiple><br><br>
         特色描述：<br><textarea class="com" name="description" rows="4" cols="50"></textarea><br>
         嵌入 Google 地圖：<br><textarea class="com" name="google_map" rows="4" cols="50"></textarea><br>
-        聯絡方式：<input type="text" name="contact" placeholder="Line 或電話號碼" class="add" /><br>
+        <span class="required">*</span>聯絡方式：<input type="text" name="contact" placeholder="Line 或電話號碼" class="add" /><br>
             <input type="checkbox" name="is_social_housing" value="true">該房屋為社會住宅<br><br>
             <input type="submit" value="上傳與預約" class="sub"><br><br>
         </form>
