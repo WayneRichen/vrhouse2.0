@@ -274,8 +274,8 @@ $sql .= 'ORDER BY is_public_benefit_lessor DESC, is_rental_certi;';
                 <div>
                     <ul class="navbari">
                         <li><a class="logoimg" href="index.php"><img src="images/logo.png" class="logo" alt="logo"></a></li>
-                        <li><a href="">聯絡我們</a></li>
-                        <li><a href="">常見問題</a></li>
+                        <li><a href="/contactus.php">聯絡我們</a></li>
+                        <li><a href="/faq.php">常見問題</a></li>
                     </ul>
                 </div>
                 <div class="inside">                    

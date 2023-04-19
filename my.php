@@ -30,6 +30,8 @@ $conn->close();
         <li><a href="upload.php">我要SHOW房</a></li>
         <li><a href="landlord.php">房東評價系統</a></li>
         <li><a href="blacklist.php">租屋黑市專區</a></li>
+        <li><a href="/contactus.php">聯絡我們</a></li>
+        <li><a href="/faq.php">常見問題</a></li>
         <li class="log"><a href="logout.php">登出</a></li>                      
     </ul>
     </div>
@@ -53,7 +55,9 @@ $conn->close();
             <?php if ($user['is_rental_certi'] == 0): ?>
             上傳政府認證合法租屋證明：<input type="file" name="rental_certi"><br><br>
             <?php endif; ?>
+            <?php if ($user['is_public_benefit_lessor'] == 0 || $user['is_rental_certi'] == 0): ?>
             <button type="submit">送出</button>
+            <?php endif; ?>
         </form>
         <?php if ($user['is_public_benefit_lessor'] || $user['is_rental_certi']): ?>
             <font size="5">我的標章</font><br>

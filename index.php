@@ -28,6 +28,8 @@ error_reporting(0);
                       <li><a href="upload.php">我要SHOW房</a></li>
                       <li><a href="landlord.php">房東評價系統</a></li>
                       <li><a href="blacklist.php">租屋黑市專區</a></li>
+                      <li><a href="/contactus.php">聯絡我們</a></li>
+                      <li><a href="/faq.php">常見問題</a></li>
                       <li class="log"><a href="logout.php" >登出</a></li>                      
                   </ul>
               </div>
@@ -98,8 +100,8 @@ error_reporting(0);
               <div class="footer">
                   <ul class="aboutus">
                       <li><h4>關於租房網：</h4></li>
-                      <li>聯絡我們</li>
-                      <li>常見問題</li>
+                      <li><a href="/contactus.php">聯絡我們</a></li>
+                      <li><a href="/faq.php">常見問題</a></li>
                       <li>為你推薦</li>
                       <li><a href="#top">回頂部</a></li>
                   </ul>
@@ -129,8 +131,8 @@ error_reporting(0);
                 <div>
                     <ul class="navbari">
                         <li><a class="logoimg" href="index.php"><img src="images/logo.png" class="logo" alt="logo"></a></li>
-                        <li><a href="">聯絡我們</a></li>
-                        <li><a href="">常見問題</a></li>
+                        <li><a href="/contactus.php">聯絡我們</a></li>
+                        <li><a href="/faq.php">常見問題</a></li>
                         <li><a href="#exampletop">VR看房範例</a></li>
                         <li><a href="landlord.php">房東評價系統</a></li>
                         <li><a href="blacklist.php">租屋黑市專區</a></li>
@@ -206,8 +208,8 @@ error_reporting(0);
                 <div class="footer">
                     <ul class="aboutus">
                         <li><h4>關於租房網：</h4></li>
-                        <li>聯絡我們</li>
-                        <li>常見問題</li>
+                        <li><a href="/contactus.php">聯絡我們</a></li>
+                        <li><a href="/faq.php">常見問題</a></li>
                         <li>為你推薦</li>
                         <li><a href="#top">回頂部</a></li>
                     </ul>

@@ -21,8 +21,8 @@ $sql = "SELECT * FROM `housee` WHERE `hh_who`='$acc';";
         <div>
             <ul class="navbari">
                 <li><a class="logoimg" href="index.php"><img src="images/logo.png" class="logo" alt="logo"></a></li>
-                <li><a href="">聯絡我們</a></li>
-                <li><a href="">常見問題</a></li>
+                <li><a href="/contactus.php">聯絡我們</a></li>
+                <li><a href="/faq.php">常見問題</a></li>
                 <li class="reg"><a href="reg.php" >登出</a></li>
             </ul>
         </div>

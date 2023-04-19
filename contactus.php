@@ -1,23 +1,6 @@
 <?php
 session_start();
 include("db.php");
-if (!empty($_GET['category'])) {
-    $category = $_GET['category'];
-    $sql = "SELECT * FROM `blacklist` WHERE `blacklist`.`category` = $category ORDER BY id DESC;";
-} else {
-    $sql = "SELECT * FROM `blacklist` ORDER BY id DESC;";
-}
-$result = $conn->query($sql);
-$posts = [];
-while($row = $result->fetch_assoc()) {
-    $posts[] = $row;
-}
-$sql = 'SELECT * FROM `category`;';
-$result = $conn->query($sql);
-$categories = [];
-while($row = $result->fetch_assoc()) {
-    $categories[] = $row;
-}
 $conn->close();
 ?>
 <!DOCTYPE html>
@@ -26,7 +9,7 @@ $conn->close();
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/99f3b63dd0.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="blacklist.css">
+        <link rel="stylesheet" href="faq.css">
         <title>VR租屋網</title>
     </head>
     <body>
@@ -59,23 +42,9 @@ $conn->close();
             </div>
             <div class="main">
                 <div class="comments">
-                    <h2>租屋黑市專區</h2>
-                    <div class="category">
-                    <?php foreach ($categories as $category): ?>
-                        <?php if (isset($_GET['category']) && $_GET['category'] == $category['id']) {
-                            echo '<i>' . $category['title'] . '</i>';
-                        } else {
-                            echo '<a href="/blacklist.php?category=' . $category['id'] . '">' . $category['title'] . '</a>';
-                        }?>
-                    <?php endforeach; ?>
-                    </div>
-                    <?php foreach ($posts as $post): ?>
-                    <div class="comment">
-                        <h2><?=$post['title']?></h2>
-                        <?=date('Y-m-d H:i', strtotime($post['created_at']))?>
-                        <p style="white-space: pre-wrap; line-height: 1.6; color: #111111"><?=$post['content']?><p>
-                    </div>
-                    <?php endforeach; ?>
+                    <h2>聯絡我們</h2>
+                    電話：04-20232023<br>
+                    信箱：<a href="mailto:hosueshow@gmail.com">hosueshow@gmail.com</a>
                 </div>
             </div>
             <div class="footer">

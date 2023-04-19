@@ -1,23 +1,6 @@
 <?php
 session_start();
 include("db.php");
-if (!empty($_GET['category'])) {
-    $category = $_GET['category'];
-    $sql = "SELECT * FROM `blacklist` WHERE `blacklist`.`category` = $category ORDER BY id DESC;";
-} else {
-    $sql = "SELECT * FROM `blacklist` ORDER BY id DESC;";
-}
-$result = $conn->query($sql);
-$posts = [];
-while($row = $result->fetch_assoc()) {
-    $posts[] = $row;
-}
-$sql = 'SELECT * FROM `category`;';
-$result = $conn->query($sql);
-$categories = [];
-while($row = $result->fetch_assoc()) {
-    $categories[] = $row;
-}
 $conn->close();
 ?>
 <!DOCTYPE html>
@@ -26,7 +9,7 @@ $conn->close();
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/99f3b63dd0.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="blacklist.css">
+        <link rel="stylesheet" href="faq.css">
         <title>VR租屋網</title>
     </head>
     <body>
@@ -59,23 +42,16 @@ $conn->close();
             </div>
             <div class="main">
                 <div class="comments">
-                    <h2>租屋黑市專區</h2>
-                    <div class="category">
-                    <?php foreach ($categories as $category): ?>
-                        <?php if (isset($_GET['category']) && $_GET['category'] == $category['id']) {
-                            echo '<i>' . $category['title'] . '</i>';
-                        } else {
-                            echo '<a href="/blacklist.php?category=' . $category['id'] . '">' . $category['title'] . '</a>';
-                        }?>
-                    <?php endforeach; ?>
-                    </div>
-                    <?php foreach ($posts as $post): ?>
-                    <div class="comment">
-                        <h2><?=$post['title']?></h2>
-                        <?=date('Y-m-d H:i', strtotime($post['created_at']))?>
-                        <p style="white-space: pre-wrap; line-height: 1.6; color: #111111"><?=$post['content']?><p>
-                    </div>
-                    <?php endforeach; ?>
+                    <h2>常見問題</h2>
+                    <h3>1.如何預約拍攝環景照片</h3>
+                    <p>A:上傳完房屋資訊後，請至聯絡我們與我們聯絡，環景照片的部分由我們負責上傳，只需要相約時間拍攝即可<br>
+                    若是本人可以親自拍攝環景照片的話，也可以至我的房屋裡上傳照片以利我們後續編輯</p>
+                    <h3>2.公益出租人與合法住宅認證文件</h3>
+                    <p>A：公益出租人證明可先至 <a href="https://nprent.cpami.gov.tw/nprent/" target="_blank">https://nprent.cpami.gov.tw/nprent/</a> 網站查詢，並截圖上傳。
+                        <img src="/images/nprentexample.jpeg" style="max-width: 720px;" /><br>
+                        合法住宅認證文件請上傳出租住宅之建築物所有權狀<br>
+                        <img src="https://obs.line-scdn.net/0hs8I_mMnbLBd0JjpPLwtTQE5wL3hHSj8UEBB9FDdIciBYFDxFT0YzIVcicCReEmtJGhVlcFQgNyYMEDhHHUcz/w644" style="max-width: 720px;" />
+                    </p>
                 </div>
             </div>
             <div class="footer">

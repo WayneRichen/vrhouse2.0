@@ -54,8 +54,8 @@ $conn->close();
             <div class="footer">
                 <ul class="aboutus">
                     <li><h4>關於租房網：</h4></li>
-                    <li>聯絡我們</li>
-                    <li>常見問題</li>
+                    <li><a href="/contactus.php">聯絡我們</a></li>
+                    <li><a href="/faq.php">常見問題</a></li>
                     <li>為你推薦</li>
                     <li><a href="#top">回頂部</a></li>
                 </ul>
