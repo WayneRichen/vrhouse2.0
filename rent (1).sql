@@ -30,10 +30,10 @@ SET time_zone = "+00:00";
 CREATE TABLE `blacklist` (
   `id` int(11) NOT NULL,
   `category` int(100) NOT NULL,
-  `title` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `content` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -43,8 +43,8 @@ CREATE TABLE `blacklist` (
 
 CREATE TABLE `category` (
   `id` int(11) NOT NULL,
-  `title` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+  `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- 傾印資料表的資料 `category`
@@ -62,11 +62,11 @@ INSERT INTO `category` (`id`, `title`) VALUES
 
 CREATE TABLE `house` (
   `h_id` int(11) NOT NULL,
-  `h_where` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `h_address` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `h_price` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `h_who` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+  `h_where` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `h_address` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `h_price` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `h_who` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- 傾印資料表的資料 `house`
@@ -99,34 +99,34 @@ INSERT INTO `house` (`h_id`, `h_where`, `h_address`, `h_price`, `h_who`) VALUES
 
 CREATE TABLE `housee` (
   `hh_id` int(11) NOT NULL,
-  `hh_name` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `hh_where` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `hh_address` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `hh_com` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `hh_name` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hh_where` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hh_address` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hh_com` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text NOT NULL,
-  `hh_price` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `water` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `light` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `inter` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `wash` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `ref` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `drink` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT 'false',
-  `tel` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT 'false',
-  `air` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT 'false',
-  `gas` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT 'false',
-  `bed` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT 'false',
-  `cloth` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT 'false',
-  `sofa` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT 'false',
-  `tach` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT 'false',
-  `pet` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT 'false',
+  `hh_price` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `water` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `light` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `inter` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `wash` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ref` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `drink` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'false',
+  `tel` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'false',
+  `air` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'false',
+  `gas` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'false',
+  `bed` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'false',
+  `cloth` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'false',
+  `sofa` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'false',
+  `tach` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'false',
+  `pet` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'false',
   `parking` varchar(10) DEFAULT NULL,
   `square` float NOT NULL,
   `deposit` varchar(10) DEFAULT NULL,
   `min_rent` int(10) NOT NULL DEFAULT 1,
   `contact` varchar(200) DEFAULT NULL,
   `is_social_housing` int(10) NOT NULL DEFAULT 0,
-  `hh_img` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `hh_who` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `hh_img` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `hh_who` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `google_map` text NOT NULL,
   `panorama_images` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
   `vr_script` text DEFAULT NULL
@@ -154,11 +154,11 @@ INSERT INTO `housee` (`hh_id`, `hh_name`, `hh_where`, `hh_address`, `hh_com`, `d
 
 CREATE TABLE `landlord_review` (
   `id` int(11) NOT NULL,
-  `user` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `landlord` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `comment` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `user` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `landlord` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `comment` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -167,17 +167,17 @@ CREATE TABLE `landlord_review` (
 --
 
 CREATE TABLE `user` (
-  `acc` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `pass` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `name` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `mail` varchar(30) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `phone` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `public_benefit_lessor` varchar(200) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `acc` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pass` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mail` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `public_benefit_lessor` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_public_benefit_lessor` tinyint(4) NOT NULL DEFAULT 0,
-  `rental_certi` varchar(200) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `rental_certi` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_rental_certi` tinyint(4) NOT NULL DEFAULT 0,
   `is_admin` int(5) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- 傾印資料表的資料 `user`
@@ -201,10 +201,10 @@ INSERT INTO `user` (`acc`, `pass`, `name`, `mail`, `phone`, `public_benefit_less
 --
 
 CREATE TABLE `vrtime` (
-  `vr_who` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `vr_time` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `備註` varchar(500) COLLATE utf8mb4_unicode_520_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+  `vr_who` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `vr_time` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `備註` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- 傾印資料表的資料 `vrtime`
